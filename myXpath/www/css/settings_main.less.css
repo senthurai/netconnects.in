@@ -1,0 +1,1315 @@
+/*
+
+  Warning:  This CSS file has been auto-generated from a .less file.  If you edit it your edits will be lost the next time LessCSS is run.
+
+  It would be best to make a separate CSS file and place any overriding CSS in there.  If you must access the original CSS, do so by editing the .less files.
+
+*/
+/* global settings */
+*,
+*:after,
+*:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+body {
+  margin: 0px;
+}
+/* grid */
+.grid {
+  width: 100%;
+}
+.upage-content > .grid {
+  max-width: none;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* gutter around whole design */
+/*
+.upage-content > .grid-pad {
+  padding: @gutter @gutter 0px @gutter;
+}
+*/
+/* column */
+.urow:not(.cright) > .col {
+  float: left;
+}
+.urow.cright > .col {
+  float: right;
+}
+.col {
+  position: relative;
+  min-height: 1px;
+}
+.content-area {
+  position: relative;
+}
+/* row */
+.urow {
+  clear: both;
+  position: relative;
+}
+form.urow {
+  margin-bottom: 0px;
+}
+.widget {
+  position: relative;
+}
+/* for widgets and the like
+   <div class="table-thing widget">
+    <div class="narrow-control w85"> my width is set </div>
+    <div class="wide-control"> my width is 100%, minus the set width of the narrow-control</div>
+   </div>
+
+   .w85 { width:85px; }
+*/
+.vertical-col > *,
+.vertical-col > .table-thing,
+.vertical-col > .afScrollPanel > .table-thing,
+.wrapping-col > .no_wrap.table-thing,
+.wrapping-col > .afScrollPanel > .no_wrap.table-thing {
+  width: 100%;
+}
+#afui .vertical-col > .afScrollPanel > .widget,
+#afui .vertical-col > .widget,
+.vertical-col > .widget {
+  width: calc(100% - 10px);
+  margin-left: 5px;
+}
+.col > .vertical-col > .widget {
+  width: 100%;
+  margin-left: 0;
+}
+.table-thing {
+  display: table;
+}
+.wide-control {
+  display: table-cell;
+  width: 100%;
+}
+.narrow-control {
+  display: table-cell;
+}
+/* wrapping column */
+.wrapping-col.right > *,
+.wrapping-col.right > .afScrollPanel > * {
+  float: right;
+}
+/* margin: 0 5px;   move margin to another class */
+.wrapping-col.left > *,
+.wrapping-col.left > .afScrollPanel > * {
+  float: left;
+}
+/* center and right alignment */
+.vertical-col.center {
+  text-align: center;
+}
+.vertical-col.right {
+  text-align: right;
+}
+.vertical-col.right > *,
+.col > .vertical-col.right > .widget,
+.vertical-col.right > .afScrollPanel > * {
+  margin-left: auto;
+}
+.vertical-col.center > *,
+.col > .vertical-col.center > .widget,
+.vertical-col.center > .afScrollPanel > * {
+  margin-left: auto;
+  margin-right: auto;
+}
+.wrapping-col:not(.horiz-area) > .no_wrap,
+.wrapping-col:not(.horiz-area) > .afScrollPanel > .no_wrap {
+  float: none;
+  clear: both;
+  /* margin: 8px 0px; */
+
+}
+.center-h-v-col > .widget {
+  position: absolute !important;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  margin-top: 0 !important;
+}
+/* shim */
+.uib_shim {
+  clear: both;
+  float: none !important;
+  width: 100%;
+  position: relative;
+  height: 0px;
+  line-height: 0px;
+  font-size: 0px;
+  display: block;
+}
+/* content-box fix for box-sizing */
+.content-box,
+.content-box:before,
+.content-box:after {
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+}
+/* page */
+.hidden:not(.afPopup) {
+  display: none;
+}
+.upage-content,
+.upage-outer {
+  position: relative;
+}
+html,
+body {
+  height: 100%;
+}
+body:not(#afui) .upage,
+body:not(#afui) .upage-content {
+  height: 100%;
+}
+body:not(#afui) .upage-outer {
+  height: auto;
+}
+/* position relative works fine. but fixed can be elected as well */
+/* .upage-content, .upage-outer { position: fixed; height:100%; } */
+.upage {
+  overflow-x: hidden;
+}
+.upage-content {
+  z-index: 1;
+}
+#afui .upage {
+  padding: 0;
+}
+/* sidebars and crossbars */
+.uib_sidebar {
+  position: fixed;
+  height: 100%;
+  top: 0px;
+}
+.uib_crossbar {
+  position: fixed;
+  width: 100%;
+  left: 0px;
+}
+.leftbar,
+.rightbar {
+  z-index: 2;
+}
+.reveal.leftbar {
+  left: 0px;
+  z-index: 0;
+}
+.reveal.rightbar {
+  right: 0px;
+  z-index: 0;
+}
+.leftbar.oh,
+.rightbar.oh {
+  z-index: 3;
+}
+.reveal {
+  z-index: 0;
+  visibility: hidden;
+}
+.topbar {
+  z-index: 3;
+}
+.topbar.reveal {
+  top: 0px;
+  z-index: 0;
+}
+.botbar {
+  z-index: 3;
+  position: fixed;
+}
+.botbar.oh,
+.topbar.oh {
+  z-index: 4;
+}
+.sidebar-content {
+  height: 100%;
+  overflow-y: auto;
+  position: relative;
+  margin: 0;
+}
+.sidebar-thumb {
+  position: relative;
+  margin: 0;
+  /* background-image:url('images/gripper.png'); */
+}
+.template {
+  display: none !important;
+}
+.uib-absolute {
+  position: absolute !important;
+}
+.checkbox-margin-right {
+  margin-right: 5px;
+}
+.checkbox {
+  display: block;
+}
+.button-icon-top {
+  display: block;
+  margin: auto;
+}
+.button-icon-bottom {
+  display: block;
+  margin: auto;
+}
+.button-icon-left {
+  float: left;
+}
+.button-icon-right {
+  float: right;
+}
+@media all {
+  .wrapping-col > .d-margins,
+  .wrapping-col > .afScrollPanel > .d-margins {
+    margin-left: 3px;
+    margin-right: 4px;
+  }
+  .wrapping-col > .d-margins,
+  .wrapping-col > .afScrollPanel > .d-margins {
+    margin-left: 3px;
+    margin-right: 4px;
+  }
+  .d-margins {
+    margin-top: 5px;
+    margin-bottom: 6px;
+  }
+}
+@media all {
+  .icon {
+    font-size: 14px;
+  }
+}
+@media all {
+  .round_button {
+    height: 30px !important;
+    width: 30px !important;
+    border-radius: 100% !important;
+  }
+}
+.sbs-container {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: -o-flex;
+  display: flex;
+  flex-direction: row;
+}
+.leftContent,
+.rightContent {
+  display: inline;
+  width: 50%;
+}
+.align-widget {
+  margin: 5px 0 !important;
+}
+.full-width-widget {
+  width: 100%;
+}
+.inline-widget {
+  display: inline-block;
+}
+label {
+  width: auto;
+  float: none;
+}
+label + *:not(div.inline-widget) {
+  width: 100% !important;
+  margin-bottom: 0 !important;
+}
+label:empty {
+  display: none;
+}
+.label-inline {
+  vertical-align: middle;
+}
+.label-top-left,
+.label-top-right {
+  display: block;
+  padding: 0;
+  margin: 0;
+}
+.label-top-left + *,
+.label-top-right + * {
+  display: block;
+}
+.label-top-left {
+  text-align: left;
+}
+.label-top-right {
+  text-align: right;
+}
+.tail-c {
+  display: table-cell;
+  width: 15px;
+}
+.figure-align {
+  display: table;
+  margin: 0px auto;
+}
+.figure-align img {
+  width: 100%;
+}
+.image-cell {
+  display: table-cell;
+  vertical-align: middle;
+}
+@media all {
+  .scale-image img {
+    width: 200px;
+  }
+}
+.remote {
+  width: 320px;
+  height: 240px;
+}
+.local {
+  position: relative;
+  top: -90px;
+  width: 120px;
+  height: 80px;
+}
+.chatwidget {
+  border: 1px solid black;
+}
+.webrtcinput {
+  margin: 0px;
+  position: relative;
+  top: 0px;
+  width: 100%;
+}
+.webrtcbutton {
+  margin: 0px 10px;
+  position: relative;
+  top: 0px;
+}
+span.narrow-control {
+  display: inline-block;
+}
+span.narrow-control.hidden {
+  display: none;
+}
+label.narrow-control {
+  width: auto;
+  float: none;
+  padding-right: 1em;
+}
+label.narrow-control + * {
+  width: 100% !important;
+}
+.label-inline {
+  display: table-cell !important;
+  vertical-align: middle;
+}
+.label-top-left,
+.label-top-right {
+  width: auto !important;
+  display: block;
+  padding: 8px 4px 0px;
+}
+.label-top-left + *,
+.label-top-right + * {
+  display: block;
+}
+.label-top-left {
+  text-align: left !important;
+}
+.label-top-right {
+  text-align: right !important;
+}
+label.narrow-control:empty {
+  display: none !important;
+}
+label.narrow-control:empty + .wide-control {
+  display: block;
+}
+#afui .narrow-control .webrtcbutton {
+  top: -8px;
+  margin: 0px 10px;
+}
+#afui .with-label label.narrow-control {
+  float: none;
+}
+#afui .with-label label.narrow-control + * {
+  display: block;
+  width: 100% !important;
+  margin-bottom: 0 !important;
+}
+#afui .with-label label.narrow-control:empty {
+  display: none;
+}
+#afui .with-label .label-inline {
+  width: 30%;
+  vertical-align: middle;
+}
+#afui .with-label .label-top-left,
+#afui .with-label .label-top-right {
+  width: auto !important;
+  display: block;
+  padding: 8px 4px 4px;
+}
+#afui .with-label .label-top-left {
+  text-align: left !important;
+}
+#afui .with-label .label-top-right {
+  text-align: right !important;
+}
+@media all {
+  .default-sprite-button div.uib-sprite {
+    background-image: url(../images/Exclaim.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+}
+@media all {
+  .hover-sprite-button:hover div.uib-sprite {
+    background-image: url(../images/Checkmark.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+}
+@media all {
+  .active-sprite-button:active div.uib-sprite {
+    background-image: url(../images/X.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+}
+@media all {
+  .sprite-sizing {
+    height: 135px !important;
+    width: 135px !important;
+    -webkit-flex: 0 0 auto !important;
+    -moz-flex: 0 0 auto !important;
+    -ms-flex: 0 0 auto !important;
+    -o-flex: 0 0 auto !important;
+    flex: 0 0 auto !important;
+  }
+}
+.popover .bar ~ .col > .widget-container {
+  padding-top: 44px;
+}
+.uib-card {
+  position: relative;
+  margin: 0px;
+  box-sizing: border-box;
+}
+.card-header,
+.card-left,
+.card-footer,
+.card-right {
+  position: absolute;
+  box-sizing: border-box;
+  padding: 0px;
+  margin: 0px;
+}
+.card-header {
+  top: 0px;
+  left: 0px;
+  right: 0px;
+}
+.card-footer {
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+}
+.card-left {
+  top: 0px;
+  left: 0px;
+  bottom: 0px;
+}
+.card-right {
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+}
+.uib-card section .widget-divider:only-of-type {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  height: auto !important;
+  width: auto !important;
+}
+.uib-card .widget-divider:only-of-type div {
+  height: 100%;
+}
+@media all {
+  .section-dimension-15 .card-header {
+    height: 40px;
+  }
+  .section-dimension-15 .card-footer {
+    height: 40px;
+  }
+  .section-dimension-15 .card-left {
+    width: 50px;
+  }
+  .section-dimension-15 .card-right {
+    width: 50px;
+  }
+  .section-dimension-15 {
+    min-height: 100px;
+  }
+  div.section-dimension-15.header-on-left .card-left {
+    top: 40px;
+  }
+  div.section-dimension-15.header-on-left .card-header {
+    left: 0px;
+  }
+  div.section-dimension-15.left-on-header .card-left {
+    top: 0px;
+  }
+  div.section-dimension-15.left-on-header .card-header {
+    left: 50px;
+  }
+  div.section-dimension-15.header-on-right .card-right {
+    top: 40px;
+  }
+  div.section-dimension-15.header-on-right .card-header {
+    right: 0px;
+  }
+  div.section-dimension-15.right-on-header .card-right {
+    top: 0px;
+  }
+  div.section-dimension-15.right-on-header .card-header {
+    right: 50px;
+  }
+  div.section-dimension-15.footer-on-left .card-left {
+    bottom: 40px;
+  }
+  div.section-dimension-15.footer-on-left .card-footer {
+    left: 0px;
+  }
+  div.section-dimension-15.left-on-footer .card-left {
+    bottom: 0px;
+  }
+  div.section-dimension-15.left-on-footer .card-footer {
+    left: 50px;
+  }
+  div.section-dimension-15.footer-on-right .card-right {
+    bottom: 40px;
+  }
+  div.section-dimension-15.footer-on-right .card-footer {
+    right: 0px;
+  }
+  div.section-dimension-15.right-on-footer .card-right {
+    bottom: 0px;
+  }
+  div.section-dimension-15.right-on-footer .card-footer {
+    right: 50px;
+  }
+  .section-dimension-15.cpad-1 {
+    padding: 40px 0px 0px 0px;
+  }
+  .section-dimension-15.cpad-1 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 40px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-15.cpad-8 {
+    padding: 0px 50px 0px 0px;
+  }
+  .section-dimension-15.cpad-8 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 0px;
+    right: 50px;
+    bottom: 0px;
+    left: 0px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-15.cpad-9 {
+    padding: 40px 50px 0px 0px;
+  }
+  .section-dimension-15.cpad-9 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 40px;
+    right: 50px;
+    bottom: 0px;
+    left: 0px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-15.cpad-4 {
+    padding: 0px 0px 40px 0px;
+  }
+  .section-dimension-15.cpad-4 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 40px;
+    left: 0px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-15.cpad-5 {
+    padding: 40px 0px 40px 0px;
+  }
+  .section-dimension-15.cpad-5 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 40px;
+    right: 0px;
+    bottom: 40px;
+    left: 0px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-15.cpad-12 {
+    padding: 0px 50px 40px 0px;
+  }
+  .section-dimension-15.cpad-12 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 0px;
+    right: 50px;
+    bottom: 40px;
+    left: 0px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-15.cpad-13 {
+    padding: 40px 50px 40px 0px;
+  }
+  .section-dimension-15.cpad-13 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 40px;
+    right: 50px;
+    bottom: 40px;
+    left: 0px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-15.cpad-2 {
+    padding: 0px 0px 0px 50px;
+  }
+  .section-dimension-15.cpad-2 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 50px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-15.cpad-3 {
+    padding: 40px 0px 0px 50px;
+  }
+  .section-dimension-15.cpad-3 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 40px;
+    right: 0px;
+    bottom: 0px;
+    left: 50px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-15.cpad-10 {
+    padding: 0px 50px 0px 50px;
+  }
+  .section-dimension-15.cpad-10 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 0px;
+    right: 50px;
+    bottom: 0px;
+    left: 50px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-15.cpad-11 {
+    padding: 40px 50px 0px 50px;
+  }
+  .section-dimension-15.cpad-11 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 40px;
+    right: 50px;
+    bottom: 0px;
+    left: 50px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-15.cpad-6 {
+    padding: 0px 0px 40px 50px;
+  }
+  .section-dimension-15.cpad-6 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 40px;
+    left: 50px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-15.cpad-7 {
+    padding: 40px 0px 40px 50px;
+  }
+  .section-dimension-15.cpad-7 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 40px;
+    right: 0px;
+    bottom: 40px;
+    left: 50px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-15.cpad-14 {
+    padding: 0px 50px 40px 50px;
+  }
+  .section-dimension-15.cpad-14 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 0px;
+    right: 50px;
+    bottom: 40px;
+    left: 50px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-15.cpad-15 {
+    padding: 40px 50px 40px 50px;
+  }
+  .section-dimension-15.cpad-15 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 40px;
+    right: 50px;
+    bottom: 40px;
+    left: 50px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-15.cpad-0 {
+    padding: 0px 0px 0px 0px;
+  }
+  .section-dimension-15.cpad-0 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    height: auto !important;
+    width: auto !important;
+  }
+}
+@media all {
+  .section-dimension-20 .card-header {
+    height: 40px;
+  }
+  .section-dimension-20 .card-footer {
+    height: 40px;
+  }
+  .section-dimension-20 .card-left {
+    width: 50px;
+  }
+  .section-dimension-20 .card-right {
+    width: 50px;
+  }
+  .section-dimension-20 {
+    min-height: 100px;
+  }
+  div.section-dimension-20.header-on-left .card-left {
+    top: 40px;
+  }
+  div.section-dimension-20.header-on-left .card-header {
+    left: 0px;
+  }
+  div.section-dimension-20.left-on-header .card-left {
+    top: 0px;
+  }
+  div.section-dimension-20.left-on-header .card-header {
+    left: 50px;
+  }
+  div.section-dimension-20.header-on-right .card-right {
+    top: 40px;
+  }
+  div.section-dimension-20.header-on-right .card-header {
+    right: 0px;
+  }
+  div.section-dimension-20.right-on-header .card-right {
+    top: 0px;
+  }
+  div.section-dimension-20.right-on-header .card-header {
+    right: 50px;
+  }
+  div.section-dimension-20.footer-on-left .card-left {
+    bottom: 40px;
+  }
+  div.section-dimension-20.footer-on-left .card-footer {
+    left: 0px;
+  }
+  div.section-dimension-20.left-on-footer .card-left {
+    bottom: 0px;
+  }
+  div.section-dimension-20.left-on-footer .card-footer {
+    left: 50px;
+  }
+  div.section-dimension-20.footer-on-right .card-right {
+    bottom: 40px;
+  }
+  div.section-dimension-20.footer-on-right .card-footer {
+    right: 0px;
+  }
+  div.section-dimension-20.right-on-footer .card-right {
+    bottom: 0px;
+  }
+  div.section-dimension-20.right-on-footer .card-footer {
+    right: 50px;
+  }
+  .section-dimension-20.cpad-1 {
+    padding: 40px 0px 0px 0px;
+  }
+  .section-dimension-20.cpad-1 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 40px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-20.cpad-8 {
+    padding: 0px 50px 0px 0px;
+  }
+  .section-dimension-20.cpad-8 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 0px;
+    right: 50px;
+    bottom: 0px;
+    left: 0px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-20.cpad-9 {
+    padding: 40px 50px 0px 0px;
+  }
+  .section-dimension-20.cpad-9 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 40px;
+    right: 50px;
+    bottom: 0px;
+    left: 0px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-20.cpad-4 {
+    padding: 0px 0px 40px 0px;
+  }
+  .section-dimension-20.cpad-4 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 40px;
+    left: 0px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-20.cpad-5 {
+    padding: 40px 0px 40px 0px;
+  }
+  .section-dimension-20.cpad-5 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 40px;
+    right: 0px;
+    bottom: 40px;
+    left: 0px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-20.cpad-12 {
+    padding: 0px 50px 40px 0px;
+  }
+  .section-dimension-20.cpad-12 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 0px;
+    right: 50px;
+    bottom: 40px;
+    left: 0px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-20.cpad-13 {
+    padding: 40px 50px 40px 0px;
+  }
+  .section-dimension-20.cpad-13 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 40px;
+    right: 50px;
+    bottom: 40px;
+    left: 0px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-20.cpad-2 {
+    padding: 0px 0px 0px 50px;
+  }
+  .section-dimension-20.cpad-2 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 50px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-20.cpad-3 {
+    padding: 40px 0px 0px 50px;
+  }
+  .section-dimension-20.cpad-3 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 40px;
+    right: 0px;
+    bottom: 0px;
+    left: 50px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-20.cpad-10 {
+    padding: 0px 50px 0px 50px;
+  }
+  .section-dimension-20.cpad-10 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 0px;
+    right: 50px;
+    bottom: 0px;
+    left: 50px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-20.cpad-11 {
+    padding: 40px 50px 0px 50px;
+  }
+  .section-dimension-20.cpad-11 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 40px;
+    right: 50px;
+    bottom: 0px;
+    left: 50px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-20.cpad-6 {
+    padding: 0px 0px 40px 50px;
+  }
+  .section-dimension-20.cpad-6 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 40px;
+    left: 50px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-20.cpad-7 {
+    padding: 40px 0px 40px 50px;
+  }
+  .section-dimension-20.cpad-7 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 40px;
+    right: 0px;
+    bottom: 40px;
+    left: 50px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-20.cpad-14 {
+    padding: 0px 50px 40px 50px;
+  }
+  .section-dimension-20.cpad-14 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 0px;
+    right: 50px;
+    bottom: 40px;
+    left: 50px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-20.cpad-15 {
+    padding: 40px 50px 40px 50px;
+  }
+  .section-dimension-20.cpad-15 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 40px;
+    right: 50px;
+    bottom: 40px;
+    left: 50px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-20.cpad-0 {
+    padding: 0px 0px 0px 0px;
+  }
+  .section-dimension-20.cpad-0 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    height: auto !important;
+    width: auto !important;
+  }
+}
+@media all {
+  .section-dimension-23 .card-header {
+    height: 40px;
+  }
+  .section-dimension-23 .card-footer {
+    height: 40px;
+  }
+  .section-dimension-23 .card-left {
+    width: 50px;
+  }
+  .section-dimension-23 .card-right {
+    width: 50px;
+  }
+  .section-dimension-23 {
+    min-height: 100px;
+  }
+  div.section-dimension-23.header-on-left .card-left {
+    top: 40px;
+  }
+  div.section-dimension-23.header-on-left .card-header {
+    left: 0px;
+  }
+  div.section-dimension-23.left-on-header .card-left {
+    top: 0px;
+  }
+  div.section-dimension-23.left-on-header .card-header {
+    left: 50px;
+  }
+  div.section-dimension-23.header-on-right .card-right {
+    top: 40px;
+  }
+  div.section-dimension-23.header-on-right .card-header {
+    right: 0px;
+  }
+  div.section-dimension-23.right-on-header .card-right {
+    top: 0px;
+  }
+  div.section-dimension-23.right-on-header .card-header {
+    right: 50px;
+  }
+  div.section-dimension-23.footer-on-left .card-left {
+    bottom: 40px;
+  }
+  div.section-dimension-23.footer-on-left .card-footer {
+    left: 0px;
+  }
+  div.section-dimension-23.left-on-footer .card-left {
+    bottom: 0px;
+  }
+  div.section-dimension-23.left-on-footer .card-footer {
+    left: 50px;
+  }
+  div.section-dimension-23.footer-on-right .card-right {
+    bottom: 40px;
+  }
+  div.section-dimension-23.footer-on-right .card-footer {
+    right: 0px;
+  }
+  div.section-dimension-23.right-on-footer .card-right {
+    bottom: 0px;
+  }
+  div.section-dimension-23.right-on-footer .card-footer {
+    right: 50px;
+  }
+  .section-dimension-23.cpad-1 {
+    padding: 40px 0px 0px 0px;
+  }
+  .section-dimension-23.cpad-1 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 40px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-23.cpad-8 {
+    padding: 0px 50px 0px 0px;
+  }
+  .section-dimension-23.cpad-8 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 0px;
+    right: 50px;
+    bottom: 0px;
+    left: 0px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-23.cpad-9 {
+    padding: 40px 50px 0px 0px;
+  }
+  .section-dimension-23.cpad-9 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 40px;
+    right: 50px;
+    bottom: 0px;
+    left: 0px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-23.cpad-4 {
+    padding: 0px 0px 40px 0px;
+  }
+  .section-dimension-23.cpad-4 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 40px;
+    left: 0px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-23.cpad-5 {
+    padding: 40px 0px 40px 0px;
+  }
+  .section-dimension-23.cpad-5 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 40px;
+    right: 0px;
+    bottom: 40px;
+    left: 0px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-23.cpad-12 {
+    padding: 0px 50px 40px 0px;
+  }
+  .section-dimension-23.cpad-12 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 0px;
+    right: 50px;
+    bottom: 40px;
+    left: 0px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-23.cpad-13 {
+    padding: 40px 50px 40px 0px;
+  }
+  .section-dimension-23.cpad-13 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 40px;
+    right: 50px;
+    bottom: 40px;
+    left: 0px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-23.cpad-2 {
+    padding: 0px 0px 0px 50px;
+  }
+  .section-dimension-23.cpad-2 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 50px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-23.cpad-3 {
+    padding: 40px 0px 0px 50px;
+  }
+  .section-dimension-23.cpad-3 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 40px;
+    right: 0px;
+    bottom: 0px;
+    left: 50px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-23.cpad-10 {
+    padding: 0px 50px 0px 50px;
+  }
+  .section-dimension-23.cpad-10 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 0px;
+    right: 50px;
+    bottom: 0px;
+    left: 50px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-23.cpad-11 {
+    padding: 40px 50px 0px 50px;
+  }
+  .section-dimension-23.cpad-11 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 40px;
+    right: 50px;
+    bottom: 0px;
+    left: 50px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-23.cpad-6 {
+    padding: 0px 0px 40px 50px;
+  }
+  .section-dimension-23.cpad-6 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 40px;
+    left: 50px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-23.cpad-7 {
+    padding: 40px 0px 40px 50px;
+  }
+  .section-dimension-23.cpad-7 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 40px;
+    right: 0px;
+    bottom: 40px;
+    left: 50px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-23.cpad-14 {
+    padding: 0px 50px 40px 50px;
+  }
+  .section-dimension-23.cpad-14 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 0px;
+    right: 50px;
+    bottom: 40px;
+    left: 50px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-23.cpad-15 {
+    padding: 40px 50px 40px 50px;
+  }
+  .section-dimension-23.cpad-15 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 40px;
+    right: 50px;
+    bottom: 40px;
+    left: 50px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-23.cpad-0 {
+    padding: 0px 0px 0px 0px;
+  }
+  .section-dimension-23.cpad-0 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    height: auto !important;
+    width: auto !important;
+  }
+}

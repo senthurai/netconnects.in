@@ -1,0 +1,28 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {}
+    },
+    "installed_plugins": {
+        "org.apache.cordova.camera": {},
+        "org.apache.cordova.media-capture": {},
+        "org.apache.cordova.network-information": {},
+        "org.apache.cordova.contacts": {},
+        "org.apache.cordova.battery-status": {},
+        "org.apache.cordova.file-transfer": {},
+        "org.apache.cordova.geolocation": {},
+        "org.apache.cordova.globalization": {},
+        "org.apache.cordova.media": {},
+        "org.apache.cordova.dialogs": {},
+        "org.apache.cordova.vibration": {},
+        "org.apache.cordova.statusbar": {},
+        "org.apache.cordova.splashscreen": {},
+        "org.apache.cordova.device": {}
+    },
+    "dependent_plugins": {
+        "org.apache.cordova.file": {}
+    }
+}

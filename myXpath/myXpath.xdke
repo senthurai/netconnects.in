@@ -1,0 +1,14 @@
+{
+  "project": {
+    "projectSettingsVersion": "1.2",
+    "currentBuildConfiguration": "Windows8",
+    "projectFiles": {},
+    "projectDirectories": {},
+    "currentService": {
+      "methodapi": "forgotUsername",
+      "endPoint": "Users",
+      "service": "kinvey"
+    },
+    "initialAutoPluginCount": 0
+  }
+}

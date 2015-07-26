@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature url="features/Savant_1.0.0.201506241226.jar" id="Savant" version="1.0.0.201506241226" os="aix,hpux,linux,macosx,qnx,solaris,win32" ws="carbon,cocoa,gtk,motif,photon,win32,wpf" nl="en_US" arch="ia64,ia64_32,PA_RISC,ppc,sparc,x86,x86_64">
+      <category name="mtws"/>
+   </feature>
+   <category-def name="mtws" label="Savant">
+      <description>
+         Savant, A Maven Type Workspace
+      </description>
+   </category-def>
+</site>

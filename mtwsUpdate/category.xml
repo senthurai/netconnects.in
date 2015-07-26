@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature url="features/Savant_1.0.0.qualifier.jar" id="Savant" version="1.0.0.qualifier" os="aix,hpux,linux,macosx,qnx,solaris,win32" ws="carbon,cocoa,gtk,motif,photon,win32,wpf" nl="en_US" arch="ia64,ia64_32,PA_RISC,ppc,sparc,x86,x86_64">
+      <category name="Savant"/>
+   </feature>
+   <category-def name="Savant" label="Savant"/>
+</site>

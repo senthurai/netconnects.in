@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <link rel="stylesheet" type="text/css" href="media_button_bar/css/media_button_bar.css">
+    <link rel="stylesheet" type="text/css" href="ratchet/css/ratchet.min.css">
+    <link rel="stylesheet" type="text/css" href="css/settings_main.less.css" class="main-less">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+
+    <script src="intelxdk.js"></script>
+    <script src="cordova.js"></script>
+    <script src="xhr.js"></script>
+    <script src="xdk/init-dev.js"></script>
+    <script type="application/javascript" src="lib/jquery.min.js"></script>
+    <script type="application/javascript" src="ratchet/js/ratchet.min.js"></script>
+    <script type="application/javascript" src="js/settings_user_scripts.js"></script>
+    <script type="application/javascript" src="xdk/ad/rat_subpage.js"></script>
+  </head>
+
+  <body>
+    <div class="upage" id="mainpage" data-role="page">
+      <div class="upage-outer">
+        <header class="bar bar-nav inner-element uib_w_1" data-uib="ratchet/title_bar" data-ver="0">
+          <div class="widget-container content-area horiz-area wrapping-col left pull-left"><a class="btn widget uib_w_6 btn-default" data-uib="ratchet/button" data-ver="0" href='index.html'><span class="icon icon-close button-icon-right" data-position="right"></span></a>
+          </div>
+          <div class="widget-container content-area horiz-area wrapping-col right pull-right"><a class="btn widget uib_w_5 btn-default d-margins" data-uib="ratchet/button" data-ver="0"><span class="icon icon-check button-icon-left" data-position="left"></span></a>
+          </div> <a><h1 class="title">Settings</h1></a>
+        </header>
+        <div class="upage-content content-area vertical-col" style="top: 44px;" id="page_57_54">
+          <div class="widget uib_w_7 scale-image d-margins" data-uib="media/img" data-ver="0">
+            <figure class="figure-align">
+              <img src="images/Strabburg.jpg">
+
+            </figure>
+          </div>
+          <div class="widget uib_w_8 d-margins" data-uib="ratchet/input" data-ver="0">
+            <label class="narrow-control"></label>
+            <input class="wide-control form-control" type="text" placeholder="Name">
+          </div>
+          <div class="widget uib_w_9 d-margins" data-uib="ratchet/input" data-ver="0">
+            <label class="narrow-control"></label>
+            <input class="wide-control form-control" type="text" placeholder="Status">
+          </div>
+          <div class="segmented-control seg-ctrl widget uib_w_10 d-margins" data-uib="ratchet/segmented_control" data-ver="0"><a class="control-item widget uib_w_11" data-uib="ratchet/control" data-ver="0" href="#modal">Public Profile</a><a class="control-item widget uib_w_12 d-margins" data-uib="ratchet/control" data-ver="0">Share SMS</a><a class="control-item widget uib_w_28 d-margins"
+            data-uib="ratchet/control" data-ver="0">Item</a><a class="control-item widget uib_w_13" data-uib="ratchet/control" data-ver="0">Donate / Pay</a>
+          </div>
+        </div>
+        <div class="bar bar-standard bar-footer inner-element uib_w_2" data-uib="ratchet/footer" data-ver="0">
+          <h2 class="title"></h2>
+          <div class="widget-container content-area horiz-area wrapping-col left pull-left"><a class="btn widget uib_w_3 btn-default d-margins" data-uib="ratchet/button" data-ver="0" href="#modal">OK</a>
+          </div>
+          <div class="widget-container content-area horiz-area wrapping-col right pull-right"><a class="btn widget uib_w_4 btn-default d-margins" data-uib="ratchet/button" data-ver="0">Cancel</a>
+          </div>
+        </div>
+      </div>
+      <div class="modal modal-click-through outer-element uib_w_14" data-uib="ratchet/modal" data-ver="0" data-backdrop="true" id="modal">
+        <header class="bar bar-nav">
+          <a class="icon icon-close pull-right" href="#modal"></a>
+          <h1 class="title">Heading</h1>
+        </header>
+
+        <div class="content modal-content">
+          <div class="col uib_col_4 single-col" data-uib="layout/col" data-ver="0">
+            <div class="widget-container content-area vertical-col">
+
+              <div class="widget uib_w_23 widget-container content-area vertical-col uib-card d-margins section-dimension-23 header-on-left cpad-3" data-uib="layout/card" data-ver="0">
+                <label class="checkbox widget uib_w_24 d-margins" data-uib="ratchet/checkbox" data-ver="0">
+                  <input type="checkbox" class="checkbox-margin-right">Public Profile Picture</label>
+                <label class="checkbox widget uib_w_25 d-margins" data-uib="ratchet/checkbox" data-ver="0">
+                  <input type="checkbox" class="checkbox-margin-right">Public Profile status</label>
+                <label class="checkbox widget uib_w_27 d-margins" data-uib="ratchet/checkbox" data-ver="0">
+                  <input type="checkbox" class="checkbox-margin-right">Search anyone</label>
+                <label class="checkbox widget uib_w_26 d-margins" data-uib="ratchet/checkbox" data-ver="0">
+                  <input type="checkbox" class="checkbox-margin-right">Message Anyone</label>
+                <section class="card-header widget-container content-area vertical-col"></section>
+                <section class="card-left widget-container content-area vertical-col"></section>
+              </div>
+              <div class="sbs-container widget uib_w_20 d-margins" data-uib="layout/side_by_side" data-ver="0">
+                <div class="leftContent widget-container">
+                  <a class="btn widget uib_w_21 btn-default d-margins btn-block" data-uib="ratchet/button" data-ver="0">Button</a>
+                </div>
+                <div class="rightContent widget-container">
+                  <a class="btn widget uib_w_22 btn-default d-margins btn-block" data-uib="ratchet/button" data-ver="0">Button</a>
+                </div>
+              </div>
+              <span class="uib_shim"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+
+</html>

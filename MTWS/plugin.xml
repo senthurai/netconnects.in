@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         point="org.eclipse.ui.views">
+      <category
+            name="Savant"
+            id="MTWS">
+      </category>
+      <view
+            name="Savant"
+            icon="icons/static_co.gif"
+            category="Savant"
+            class="mtws.views.MtwsView"
+            id="mtws.views.MtwsView">
+      </view>
+   </extension>
+   <extension
+         id="Savan"
+         name="Savan"
+         point="org.eclipse.ui.perspectiveExtensions">
+      <perspectiveExtension
+            targetID="org.eclipse.jdt.ui.JavaPerspective">
+         <view
+               ratio="0.5"
+               relative="org.eclipse.ui.views.TaskList"
+               relationship="right"
+               id="mtws.views.MtwsView">
+         </view>
+      </perspectiveExtension>
+   </extension>
+   <extension
+         point="org.eclipse.help.contexts">
+      <contexts
+            file="contexts.xml">
+      </contexts>
+   </extension>
+
+</plugin>

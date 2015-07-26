@@ -1,0 +1,11 @@
+#
+#Fri Jun 19 19:43:58 EDT 2015
+FtpPath=/opt/eas/was_7.0/IBM/WebSphere/AppServer/profiles/EDSPCPINT/installedApps/cddssi02Node07Cell/BridgesEAR.ear/
+SavantProjects=RT;PT;DI;FN;QC;SE;EC;ED;ST;EG;MO;EI;IQ;MU;EN;GR;AL;CO;CP;AR;RD;CV;RE;VM;RP;
+jarPaths=C\:\\Download\\SIT\\BridgesEAR.ear;
+UserName=aanbutt
+HashCode=MjEzQFZhY21z
+jarPath=C\:\\Download\\SIT\\BridgesEAR.ear\\
+ConfigPath=
+PortNum=22
+ServerName=10.192.79.22

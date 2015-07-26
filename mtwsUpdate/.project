@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
+	<name>mtwsUpdate</name>
+	<comment></comment>
+	<projects>
+		<project>MTWS</project>
+		<project>Savant</project>
+	</projects>
+	<buildSpec>
+		<buildCommand>
+			<name>org.eclipse.pde.UpdateSiteBuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+	</buildSpec>
+	<natures>
+		<nature>org.eclipse.pde.UpdateSiteNature</nature>
+	</natures>
+</projectDescription>

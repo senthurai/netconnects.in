@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="Savant"
+      label="Savant"
+      version="1.0.0.qualifier"
+      provider-name="netConnects"
+      plugin="MTWS"
+      os="aix,hpux,linux,macosx,qnx,solaris,win32"
+      ws="carbon,cocoa,gtk,motif,photon,win32,wpf"
+      nl="en_US"
+      arch="ia64,ia64_32,PA_RISC,ppc,sparc,x86,x86_64"
+      colocation-affinity="Savant.34">
+
+   <description url="http://Savant.netconnects.in">
+      Savant, A Maven Type Work Space
+   </description>
+
+   <copyright url="http://Savant.netconnects.in">
+      Savant, A Maven Type Workspace
+   </copyright>
+
+   <license url="http://Savant.netconnects.in">
+      This program is free software; you can redistribute it and/or
+modify it under the terms of the GNU General Public License
+as published by the Free Software Foundation; either version
+2
+of the License, or (at your option) any later version.
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
+02110-1301, USA.
+   </license>
+
+   <url>
+      <discovery label="Savant" url="http://Savant.netconnects.in"/>
+   </url>
+
+   <requires>
+      <import plugin="org.eclipse.ui"/>
+      <import plugin="org.eclipse.core.runtime"/>
+      <import plugin="org.eclipse.core.resources" version="3.5.2" match="greaterOrEqual"/>
+   </requires>
+
+   <plugin
+         id="MTWS"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"/>
+
+   <data
+         id=".project"
+         os="linux,win32"
+         ws="win32"
+         nl="English"
+         arch="x86,x86_64"
+         download-size="0"
+         install-size="0"/>
+
+   <data
+         id="build.properties"
+         download-size="0"
+         install-size="0"/>
+
+   <data
+         id=".settings/com.ibm.etools.references.prefs"
+         download-size="0"
+         install-size="0"/>
+
+   <data
+         id=".settings/org.eclipse.ltk.core.refactoring.prefs"
+         download-size="0"
+         install-size="0"/>
+
+</feature>
