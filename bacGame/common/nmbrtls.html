@@ -1,0 +1,4 @@
+<span class="line bac-status-{{$ctrl.data.status}} bac-side-{{$ctrl.data.side}}">
+  <span style="txt-clr-{{$ctrl.data.invrsnBln}}">{{$ctrl.data.invrsnBln?"o":"x"}}</span> {{$ctrl.data.opposite}}
+  <span ng-show='$ctrl.data.status=="tie"' class='bac-m-tie'>#</span>
+</span>

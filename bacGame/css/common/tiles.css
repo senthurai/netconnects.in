@@ -1,0 +1,80 @@
+ .gam {
+   width: 30px;
+   height: 30px;
+   position: relative;
+   color: white;
+   overflow: hidden;
+   border-radius: 10px;
+   float: left;
+ }
+ 
+ .brow {
+   width: 100%;
+   height: 50%;
+ }
+ 
+ .bnkr {
+   background-color: rgba(255, 0, 0, .6);
+ }
+ 
+ .plyr {
+   background-color: rgba(153, 217, 234, .6);
+ }
+ 
+ .te {
+   background-color: green;
+ }
+ 
+ .smallCell {
+   position: relative;
+   width: 15px;
+   height: 15px;
+   margin: 0px;
+ }
+ 
+ .p3 {
+   border-color: rgb(20, 180, 50);
+   float: left;
+   background-color: black;
+   display: block;
+   vertical-align: Top;
+ }
+ 
+ .b3 {
+   border-color: rgb(255, 0, 0);
+   background-color: grey;
+   float: right;
+   display: block;
+   top: 0px;
+   right: 0px;
+   position: relative;
+ }
+ 
+ .bnkD {
+   border-color: rgb(255, 0, 0);
+   float: right;
+   display: block;
+   background-image: url("http://www.groomerchick.com/smartagon_sys/_ss_temp_images_20150821/1422203667-1043_809cc7aabef0e8445200230ee79dfd27bb2f390f/010356-3d-transparent-glass-icon-animals-animal-dragon5-sc28-png_imagemagick-png--quality-95-256.png");
+   background-size: cover;
+   vertical-align: Top;
+   overflow: hidden;
+ }
+
+ .plrD {
+   border-color: rgb(20, 180, 50);
+   display: block;
+   background-image: linear-gradient(to right top, blue 0%, transparent 100%), url("http://www.groomerchick.com/smartagon_sys/_ss_temp_images_20150821/1422203667-1043_809cc7aabef0e8445200230ee79dfd27bb2f390f/010356-3d-transparent-glass-icon-animals-animal-dragon5-sc28-png_imagemagick-png--quality-95-256.png");
+   background-size: cover;
+   vertical-align: bottom;
+   position: relative;
+ }
+ 
+ .curr {
+   border: 2px solid black;
+ }
+ 
+ .t-overlay {
+   padding: 5px;
+   position: absolute;
+   z-index: 100;
+ }

@@ -1,0 +1,31 @@
+.line{
+    width:30px;
+    height:30px;
+    margin:0px;
+    position:relative;
+    display:block;
+    float:left;
+  }
+  .bac-status-win{
+    border-top: 5px solid;
+  } 
+  .bac-status-lose{
+   border-bottom: 5px solid;
+  }
+
+  .bac-m-tie{
+    font-size:2.0em;
+  }
+  .bac-side-plyr{
+    border-color:rgba(153, 217, 234,.6);
+  }
+  .bac-side-bnkr{
+    border-color:rgba(255, 0, 0,.6);
+  }
+ 
+  .txt-clr-true{
+      color:green;
+  }
+  .txt-clr-false{
+      color:red;
+  }

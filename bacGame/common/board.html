@@ -1,0 +1,33 @@
+<div style="width:100%">
+  <input type="checkbox" name="horizon"/>horizon
+  <button ng-click="$ctrl.newBoard()"> New Board </button>
+  <button ng-click="$ctrl.newBoard()"> Delete Board </button>
+  <button ng-click="$ctrl.anlytcs()"> Run Analytics </button>
+  <br/>
+  <br/>
+  <div id="slider" style="width:300px"> 
+    <script>
+      $("#slider").slider({ 
+        range: "max",
+        min: 2,
+        max: 12,
+        value: 2,
+        slide: function(event, ui) {
+          if(ui.max!=ui.value){
+          $(".board").css('width',(ui.value * 40)+'px');
+          }else{
+             $(".board").css('width','100%');
+          }
+        }
+      }); 
+    </script>
+  </div>
+  <br/>
+  <div>
+    <button ui-sref="dashboardModulasView">Modulas</button>
+    <button ui-sref="dashboardTailView">Tail View</button>
+    <button ui-sref="dashboardNumberView">Number View</button>
+  </div>
+ <ui-view></ui-view>
+
+</div>

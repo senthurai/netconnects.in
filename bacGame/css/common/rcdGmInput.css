@@ -1,0 +1,17 @@
+.rcdGmInpt {
+    width: 250px;
+  }
+  .recInput {
+    width: 50%;
+  } 
+  .top-left-button{ 
+    float:left;
+   
+  }
+  .pInpt{ 
+    background-color: rgba(153, 217, 234,.6);
+  } 
+  .bInpt{ 
+    background-color: rgba(255, 0, 0,.6);
+  
+  }

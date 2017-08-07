@@ -1,0 +1,23 @@
+<div>
+  <div class="board" >
+    <label>number 1
+      <input class="nmbrInpt" ng-model="search1.opposite" />
+    </label>
+    Vs
+    <label>number 2
+      <input class="nmbrInpt" ng-model="search2.opposite" />
+    </label>
+    <button ng-click='search2.opposite="";search1.opposite=""'>x</button>
+    <br>
+    <span ng-repeat='gm in $ctrl.numMap track by $index '>
+        
+        <div ng-if="(($index==search1.opposite || $index==search2.opposite) || !(search2.opposite && search1.opposite))">{{$rt=$index}}<span ng-repeat='gmData in gm  track by $index '>
+         <div ><bac-num-tiles  ng-if="(gmData.opposite!=$rt && (gmData.opposite==search2.opposite||gmData.opposite==search1.opposite)) || (!(search2.opposite && search1.opposite))"  data='gmData' ></bac-num-tiles></div>
+         </span>
+    <br/>
+    <br/>
+    <br/>
+  </div>
+  </span>
+</div>
+</div>
