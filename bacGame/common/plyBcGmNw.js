@@ -57,8 +57,8 @@ var bacGameAction = function(recGmCtrl) {
     });
   }
   plyBcGmActnCtrl.anounceWinner = function(game) {
-     plyBcGmActnCtrl.pTotal.pop();
-      plyBcGmActnCtrl.bTotal.pop();
+     plyBcGmActnCtrl.pTotal.splice(0,1);
+      plyBcGmActnCtrl.bTotal.splice(0,1);
     plyBcGmActnCtrl.pTotal.push( game.plyrTtlVl);
     plyBcGmActnCtrl.bTotal.push( game.bnkrTtlVl);
  
