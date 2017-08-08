@@ -58,9 +58,10 @@ var bacGameAction = function(recGmCtrl) {
   }
   plyBcGmActnCtrl.anounceWinner = function(game) {
      plyBcGmActnCtrl.pTotal.pop();
-    plyBcGmActnCtrl.pTotal = game.plyrTtlVl+"";
-    plyBcGmActnCtrl.bTotal = game.bnkrTtlVl+"";
-   
+      plyBcGmActnCtrl.bTotal.pop();
+    plyBcGmActnCtrl.pTotal.push( game.plyrTtlVl);
+    plyBcGmActnCtrl.bTotal.push( game.bnkrTtlVl);
+ 
   }
   plyBcGmActnCtrl.clear = function() {
 
