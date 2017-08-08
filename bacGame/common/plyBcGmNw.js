@@ -3,8 +3,8 @@ var plyBcGmNwController = function($boardService) {
   recGmCtrl = this;
   recGmCtrl.bnkr = [];
   recGmCtrl.plyr = [];
-  recGmCtrl.pTotal = "0";
-  recGmCtrl.bTotal = "0";
+  recGmCtrl.pTotal = {0};
+  recGmCtrl.bTotal = {0};
   recGmCtrl.currInput = new bacPlay(true);
   recGmCtrl.id = {
     val: -1
@@ -57,6 +57,7 @@ var bacGameAction = function(recGmCtrl) {
     });
   }
   plyBcGmActnCtrl.anounceWinner = function(game) {
+     plyBcGmActnCtrl.pTotal.pop();
     plyBcGmActnCtrl.pTotal = game.plyrTtlVl+"";
     plyBcGmActnCtrl.bTotal = game.bnkrTtlVl+"";
    
