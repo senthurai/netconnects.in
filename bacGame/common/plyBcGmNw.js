@@ -3,8 +3,8 @@ var plyBcGmNwController = function($boardService) {
   recGmCtrl = this;
   recGmCtrl.bnkr = [];
   recGmCtrl.plyr = [];
-  recGmCtrl.pTotal = [0,1];
-  recGmCtrl.bTotal = [0,1];
+  recGmCtrl.pTotal = [0];
+  recGmCtrl.bTotal = [0];
   recGmCtrl.currInput = new bacPlay(true);
   recGmCtrl.id = {
     val: -1
