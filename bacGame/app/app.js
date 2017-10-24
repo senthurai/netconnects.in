@@ -17,7 +17,8 @@
        deps: ['angular', 'angular-ui-router', 'ngRoute']
      }, 
      angular: { 
-       exports: 'angular'
+       exports: 'angular',
+       deps: ['jquery']
      }
    }, 
    paths: {
