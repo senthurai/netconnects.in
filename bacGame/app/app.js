@@ -18,7 +18,7 @@
      }, 
      angular: { 
        exports: 'angular',
-       deps: ['jquery']
+       deps: ['jquery','jqueryUi']
      }
    }, 
    paths: {
@@ -27,6 +27,7 @@
      "common": "../common",
      "core": "../core", 
      "jquery": "//code.jquery.com/jquery-3.1.1.min",
+     "jqueryUi":"//code.jquery.com/ui/1.12.1/jquery-ui",
      "angular": "//npmcdn.com/angular@1.6.2/angular",
      "ngStorage": "//rawgithub.com/gsklee/ngStorage/master/ngStorage",
      "ngRoute": "//code.angularjs.org/1.6.2/angular-route",
