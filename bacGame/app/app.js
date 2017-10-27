@@ -2,7 +2,7 @@
    "baseUrl": "lib",
    shim: {
      uiBootstrap: {
-       deps: ['jquery']
+       deps: ['jquery','jqueryUi']
      },
      ngStorage: {
        deps: ['angular']
