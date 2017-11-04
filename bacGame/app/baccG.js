@@ -1,7 +1,7 @@
-define(["angular","jquery",  "ngStorage", "ngRoute", "angular-ui-router"],
+define(["angular","jquery",  "ngStorage", "ngRoute", "angular-ui-router","rzSlider"],
    function(ng) {
      'use strict';
-     var bacApp = ng.module("BaccG", ['ngStorage', 'ngRoute', 'ui.router']);
+     var bacApp = ng.module("BaccG", ['ngStorage', 'ngRoute', 'ui.router','rzModule']);
      bacApp.controller('bacG', function($scope) {
      var  ctrl = this;
        ctrl.id = {

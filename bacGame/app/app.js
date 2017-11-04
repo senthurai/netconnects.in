@@ -16,16 +16,18 @@
      "app/routes": {
        deps: ['angular', 'angular-ui-router', 'ngRoute']
      }, 
+     rzSlider:{
+       deps:['angular']
+     },
      angular: { 
-       exports: 'angular',
-       deps: ['jquery','jqueryUi']
+       exports: 'angular'
      }
    }, 
    paths: {
-     "jq":"../jq",
      "app": "../app",
      "common": "../common",
      "core": "../core", 
+     "rzSlider":"//rawgit.com/rzajac/angularjs-slider/master/dist/rzslider",
      "jquery": "//code.jquery.com/jquery-3.1.1.min",
      "jqueryUi":"//code.jquery.com/ui/1.12.1/jquery-ui",
      "angular": "//npmcdn.com/angular@1.6.2/angular",

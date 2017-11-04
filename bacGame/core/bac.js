@@ -84,7 +84,8 @@ var bacGm = function() {
   bg.initialBurn = function(deck, callbackFunction) {
     var card = deck[deck.length - 1];
     bg.cardCollector.push(card);
-    for (var i = 2; i <= bg.getCardValue(card) + 1; i++) {
+    var noOfCardToBurn=bg.getCardValue(card) + 1;
+    for (var i = 2; i <= noOfCardToBurn; i++) {
       var nextCard = deck[deck.length - i];
       bg.cardCollector.push(nextCard);
     }
@@ -93,7 +94,7 @@ var bacGm = function() {
     // burn card count is (value of the first card+1).
     // push the burnt card to the card collector.
     if (checkCallBackFunction(callbackFunction)) {
-      if (callbackFunction.initialBurn(game)) {
+      if (callbackFunction(card)) {
         return;
       }
     }

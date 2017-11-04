@@ -17,7 +17,6 @@ define([
      */
     require([
       'domReady',
-      'jq/jqueryComponent',
       'core/deck',
       'core/bacAnalysis',
       'core/util',

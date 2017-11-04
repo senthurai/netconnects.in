@@ -1,22 +1,8 @@
- <div id="slider" style="width:300px"> 
-    <script>
-      $("#slider").slider({ 
-        range: "max",
-        min: 2,
-        max: 12,
-        value: 2,
-        slide: function(event, ui) {
-          if(ui.max!=ui.value){
-          $(".board").css('width',(ui.value * 40)+'px');
-          }else{
-             $(".board").css('width','100%');
-          }
-        }
-      }); 
-    </script>
-  </div>
-<div class="board">
-  <span ng-repeat='gm in $ctrl.data  track by $index'>
+<rzslider rz-slider-model="$ctrl.burnCard.cardNum"></rzslider>
+<div class="board" >
+  <span ng-repeat='gm in $ctrl.modulasData  track by $index'>
+    <div ng-if="($index % $ctrl.getBoardWidth($ctrl.burnCard.cardNum))==0"><br/><br/></div>
    <bactiles data="gm" ></bactiles>
+    
   </span>
 </div>
