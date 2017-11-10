@@ -54,7 +54,7 @@
    border-color: rgb(255, 0, 0);
    float: right;
    display: block;
-   background-image: url("http://www.groomerchick.com/smartagon_sys/_ss_temp_images_20150821/1422203667-1043_809cc7aabef0e8445200230ee79dfd27bb2f390f/010356-3d-transparent-glass-icon-animals-animal-dragon5-sc28-png_imagemagick-png--quality-95-256.png");
+   background-image: linear-gradient(to right top, red 0%, transparent 80%), url("../../img/dragon.png");
    background-size: cover;
    vertical-align: Top;
    overflow: hidden;
@@ -63,7 +63,7 @@
  .plrD {
    border-color: rgb(20, 180, 50);
    display: block;
-   background-image: linear-gradient(to right top, blue 0%, transparent 100%), url("http://www.groomerchick.com/smartagon_sys/_ss_temp_images_20150821/1422203667-1043_809cc7aabef0e8445200230ee79dfd27bb2f390f/010356-3d-transparent-glass-icon-animals-animal-dragon5-sc28-png_imagemagick-png--quality-95-256.png");
+   background-image: linear-gradient(to right top, blue 0%, transparent 50%), url("../../img/dragon.png");
    background-size: cover;
    vertical-align: bottom;
    position: relative;

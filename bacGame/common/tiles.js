@@ -17,6 +17,9 @@
         return (((p13 || p23) && (p1 - p2 > 3)) && (p1 != p2)); // drag
       };
       ctrl.isBnkD = function($ctrl) { 
+        if(!$ctrl){
+          return false;
+        }
        p13= $ctrl.p3
        p23= $ctrl.b3
        b= $ctrl.bnkrTtlVl;
@@ -26,6 +29,9 @@
         return isNtrl(b3, p3, b, p) || isDrgn(b3, p3, b, p); // drag
       }
       ctrl.isPlrD = function($ctrl) {
+        if(!$ctrl){
+          return false;
+        }
        p13= $ctrl.p3
        p23= $ctrl.b3
        b= $ctrl.bnkrTtlVl;
