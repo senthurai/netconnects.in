@@ -1,11 +1,15 @@
-Vertical: <input type="checkbox"   ng-click="$ctrl.getModulasData()" ng-checked="$ctrl.verticalBoard" />
-Curl: <input type="checkbox"  ng-click="$ctrl.getModulasData()" ng-model="$ctrl.curl" />
-<rzslider rz-slider-model="$ctrl.burnCard.cardNum"></rzslider> 
+<div class="">
+  <form>
 
-<div class="board" >
-  <span ng-repeat='gm in $ctrl.modulasData  track by $index'>
-    <div ng-if="($index % $ctrl.getBoardWidth($ctrl.burnCard.cardNum))==0"><br/><br/></div>
-   <bactiles data="gm" ></bactiles>
+    Vertical: <input type="checkbox" ng-click="$ctrl.getModulasData()" ng-checked="$ctrl.verticalBoard" /> Curl: <input type="checkbox" ng-click="$ctrl.getModulasData()" ng-model="$ctrl.curl" />
+    <rzslider rz-slider-model="$ctrl.burnCard.cardNum"></rzslider>
+
+    <div class="board" style="width:{{$ctrl.getBoardWidth($ctrl.burnCard.cardNum)*33}}px">
+      <span ng-repeat='gm in $ctrl.modulasData track by $index'>
+        <div ng-if="($index % $ctrl.getBoardWidth($ctrl.burnCard.cardNum))==0"><br/><br/></div>
+        <bactiles data="gm" ></bactiles>
     
   </span>
-</div>
+    </div>
+  </form>
+  <div>

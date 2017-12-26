@@ -17,12 +17,15 @@ define([
      */
     require([
       'domReady',
+      'uiBootstrap',
       'core/deck',
       'core/bacAnalysis',
       'core/util',
       'core/bac',
       'app/core/card',
        'app/plyBcGm',
+      'common/footersection',
+      'common/headersection',
       'common/plyBcGmNw', 
       'common/nmbrTls', 
       'common/tiles',

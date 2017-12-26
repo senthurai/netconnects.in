@@ -9,7 +9,6 @@ bacApp.component('modulasView', ['rzModule', {
 function modulasViewController($scope) {
   ctrl = this;
   burnCard = ctrl.burnCard;
-  ctrl.boardWidth = 5 * 40;
   $scope.minSlider = {
     value: 10
   };

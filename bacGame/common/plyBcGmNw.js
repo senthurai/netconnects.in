@@ -1,17 +1,63 @@
 var bacApp = angular.module("BaccG");
+var bacGameAction = function(playGmCtrl) {
+  var plyBcGmActnCtrl = this;
+  var playGmCtrlv = playGmCtrl;
+  plyBcGmActnCtrl.playAGame = function() {
+    playGmCtrl.bnkr.splice(0, playGmCtrl.bnkr.length);
+    playGmCtrl.plyr.splice(0, playGmCtrl.plyr.length);
+
+  }
+  plyBcGmActnCtrl.pullInitialCards = function(game) {
+    game.banker.getArray().forEach(function(e) {
+      playGmCtrl.bnkr.push(e);
+    });
+    game.player.getArray().forEach(function(e) {
+      playGmCtrl.plyr.push(e);
+    });
+
+  }
+  plyBcGmActnCtrl.naturalOrTie = function(game) { 
+
+  }
+  plyBcGmActnCtrl.playerGets3rdCard = function(game) {
+    playGmCtrl.plyr.splice(0, playGmCtrl.plyr.length);
+    game.player.getArray().forEach(function(card) {
+      playGmCtrl.plyr.push(card);
+    });
+  }
+  plyBcGmActnCtrl.bankerGets3rdCard = function(game) {
+    playGmCtrl.bnkr.splice(0, playGmCtrl.bnkr.length);
+    game.banker.getArray().forEach(function(card) {
+      playGmCtrl.bnkr.push(card);
+    });
+  }
+  plyBcGmActnCtrl.anounceWinner = function(game) {
+     playGmCtrl.pTotal.splice(0,1);
+      playGmCtrl.bTotal.splice(0,1);
+    playGmCtrl.pTotal.push( game.plyrTtlVl);
+    playGmCtrl.bTotal.push( game.bnkrTtlVl);
+ 
+  }
+  plyBcGmActnCtrl.clear = function() {
+
+  }
+
+}
+
 var plyBcGmNwController = function($boardService) {
-  recGmCtrl = this;
-  recGmCtrl.bnkr = [];
-  recGmCtrl.plyr = [];
-  recGmCtrl.pTotal = [0];
-  recGmCtrl.bTotal = [0];
-  recGmCtrl.currInput = new bacPlay(true);
-  recGmCtrl.id = {
+  playGmCtrl = this;
+  playGmCtrl.bnkr = [];
+  playGmCtrl.plyr = [];
+  playGmCtrl.pTotal = [0];
+  playGmCtrl.bTotal = [0];
+  playGmCtrl.currInput = new bacPlay(true);
+   playGmCtrl.betValues=[25,100,250,500,1000,2000,3000,4000,5000];
+  playGmCtrl.id = {
     val: -1
   };
-  recGmCtrl.nextGame = function() {
-    if (recGmCtrl.bcGm.deck.length > 7) {
-      recGmCtrl.bcGm.playAGame(new bacGameAction(recGmCtrl));
+  playGmCtrl.nextGame = function() {
+    if (playGmCtrl.bcGm.deck.length > 7) {
+      playGmCtrl.bcGm.playAGame(new bacGameAction(playGmCtrl));
     }
   }
 };
@@ -24,47 +70,3 @@ bacApp.component('plyBcGmNw', {
 });
 
 
-var bacGameAction = function(recGmCtrl) {
-  var plyBcGmActnCtrl = this;
-  var recGmCtrlv = recGmCtrl;
-  plyBcGmActnCtrl.playAGame = function() {
-    recGmCtrl.bnkr.splice(0, recGmCtrl.bnkr.length);
-    recGmCtrl.plyr.splice(0, recGmCtrl.plyr.length);
-
-  }
-  plyBcGmActnCtrl.pullInitialCards = function(game) {
-    game.banker.getArray().forEach(function(e) {
-      recGmCtrl.bnkr.push(e);
-    });
-    game.player.getArray().forEach(function(e) {
-      recGmCtrl.plyr.push(e);
-    });
-
-  }
-  plyBcGmActnCtrl.naturalOrTie = function(game) { 
-
-  }
-  plyBcGmActnCtrl.playerGets3rdCard = function(game) {
-    recGmCtrl.plyr.splice(0, recGmCtrl.plyr.length);
-    game.player.getArray().forEach(function(e) {
-      recGmCtrl.plyr.push(e);
-    });
-  }
-  plyBcGmActnCtrl.bankerGets3rdCard = function(game) {
-    recGmCtrl.bnkr.splice(0, recGmCtrl.bnkr.length);
-    game.banker.getArray().forEach(function(e) {
-      recGmCtrl.bnkr.push(e);
-    });
-  }
-  plyBcGmActnCtrl.anounceWinner = function(game) {
-     plyBcGmActnCtrl.pTotal.splice(0,1);
-      plyBcGmActnCtrl.bTotal.splice(0,1);
-    plyBcGmActnCtrl.pTotal.push( game.plyrTtlVl);
-    plyBcGmActnCtrl.bTotal.push( game.bnkrTtlVl);
- 
-  }
-  plyBcGmActnCtrl.clear = function() {
-
-  }
-
-}

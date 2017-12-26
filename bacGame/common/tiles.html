@@ -1,12 +1,12 @@
-<span>
-  <div class='gam {{$ctrl.data.winner($ctrl.data)}} {{$ctrl.data.isCurrent && ((!($ctrl.ignrSlctn)) || $ctrl.ignrSlctn!=true)?"curr":""}}'>
-    <div class="t-overlay"> {{$ctrl.data.guess}}</div>
+<div class='gam {{$ctrl.data.winner($ctrl.data)}} {{$ctrl.data.isCurrent && ((!($ctrl.ignrSlctn)) || $ctrl.ignrSlctn!=true)?"curr":""}}'>
+  <div class=' {{$ctrl.getDragon($ctrl.data)}} '>
+    <div class="t-overlay   "> {{$ctrl.data.guess}}</div>
     <div class="brow"> 
-      <span class='smallCell {{$ctrl.isPlrD($ctrl.data)?"plrD":""}}'></span>
+      <span class='smallCell '></span>
 <span class='smallCell {{$ctrl.data.b3?"b3":""}}'></span>
     </div>
-<div class="brow"> <span class='smallCell {{$ctrl.isBnkD($ctrl.data)?"bnkD":""}}'></span> <span class='smallCell {{$ctrl.data.p3?"p3":""}}'>  </span>
+<div class="brow"> <span class='smallCell '></span> <span class='smallCell {{$ctrl.data.p3?"p3":""}}'>  </span>
 
 </div>
 </div>
-</span>
+</div>

@@ -1,12 +1,13 @@
-<style>
-    <!--
+<head><style>
+  <!--
   /* Font Definitions */
-  
+
   @font-face {}
-  
+
   @font-face {}
+
   /* Style Definitions */
-  
+
   p.MsoNormal,
   li.MsoNormal,
   div.MsoNormal {
@@ -15,7 +16,9 @@
     .MsoPapDefault {}
     @page WordSection1 {}
     div.WordSection1 {}
+  }
     -->
+    
 </style>
 
 </head>
@@ -26,31 +29,27 @@
 
     <table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0>
       <tr>
-        <td width=52 valign=top>
-          <p class=MsoNormal>&nbsp;</p>
-        </td>
-        <td width=47 valign=top>
+
+        <td valign=top colspan="2">
           <p class=MsoNormal align=center>Player</p>
         </td>
-        <td width=51 valign=top>
-          <p class=MsoNormal align=center>Banker</p>
+        <td colspan="2" valign=top>
+          <p class='MsoNormal' align=center>Banker</p>
         </td>
-        <td width=52 valign=top>
-          <p class=MsoNormal>&nbsp;</p>
-        </td>
+        
       </tr>
       <tr>
-        <td width=52 valign=top>
+        <td valign=top>
           <p class=MsoNormal>Pair</p>
         </td>
-        <td width=47 rowspan=3 valign=top>
+        <td rowspan=3 valign=top>
           <p class=MsoNormal>
             <span ng-repeat='gm in $ctrl.plyr  track by $index'>
             <card data="gm"></card>
             </span>
           </p>
         </td>
-        <td width=51 rowspan=3 valign=top>
+        <td rowspan=3 valign=top>
           <p class=MsoNormal>
             <span ng-repeat='gm in $ctrl.bnkr  track by $index'>
             <card data="gm"></card>
@@ -58,42 +57,37 @@
 
           </p>
         </td>
-        <td width=52 valign=top>
+        <td valign=top>
           <p class=MsoNormal>Pair</p>
         </td>
       </tr>
       <tr>
-        <td width=52 valign=top>
+        <td valign=top>
           <p class=MsoNormal>Dragan</p>
         </td>
-        <td width=52 valign=top>
+        <td valign=top>
           <p class=MsoNormal>Dragon</p>
         </td>
       </tr>
       <tr>
-        <td width=52 valign=top>
+        <td valign=top>
           <p class=MsoNormal>Total </p>
           {{$ctrl.pTotal[0]}}
         </td>
-        <td width=52 valign=top>
+        <td valign=top>
           <p class=MsoNormal>Total</p>
           {{$ctrl.bTotal[0]}}
         </td>
       </tr>
       <tr>
-        <td width=52 valign=top>
-          <p class=MsoNormal>Prev Game</p>
+        <td valign=top></td>
+        <td valign=top> <select class="form-control" id="transactiontype" ng-model="betAmt" ng-options=" opt for opt in [25,100,250,500,1000,2000,3000,4000,5000]" /></td>
+        <td valign=top> <select class="form-control" id="transactiontype" ng-model="betSide" ng-options=" opt for opt in ['Player','Banker']" /></td>
+        <td valign=top><button type="button" id="button_play" class="btn form-control" ng-click='$ctrl.nextGame()'>
+      <i class="fa fa-play"></i>
+    </button> 
         </td>
-        <td width=47 valign=top>
-          <p class=MsoNormal>Bet</p>
-        </td>
-        <td width=51 valign=top>
-          <button>pull card</button>
-        </td>
-        <td width=52 valign=top>
-          <p class=MsoNormal>
-            <button ng-click='$ctrl.nextGame()'>Next Game</button>
-          </p>
+
         </td>
       </tr>
     </table>

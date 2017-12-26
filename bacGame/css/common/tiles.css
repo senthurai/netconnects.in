@@ -52,20 +52,24 @@
  
  .bnkD {
    border-color: rgb(255, 0, 0);
-   float: right;
-   display: block;
    background-image: linear-gradient(to right top, red 0%, transparent 80%), url("../../img/dragon.png");
    background-size: cover;
-   vertical-align: Top;
+   z-index:10;
    overflow: hidden;
  }
-
+.dragon{
+  
+   background-image: linear-gradient(to right top, black 0%, transparent 100%), url("../../img/black_dragon.jpg");
+   background-size: cover;
+   z-index:11;
+   overflow: hidden;
+  opacity: 0.6;
+}
  .plrD {
    border-color: rgb(20, 180, 50);
-   display: block;
    background-image: linear-gradient(to right top, blue 0%, transparent 50%), url("../../img/dragon.png");
    background-size: cover;
-   vertical-align: bottom;
+   z-index:10;
    position: relative;
  }
  

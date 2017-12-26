@@ -54,6 +54,9 @@ var bacPlay = function(isInp) {
 var bacGm = function() {
   var bg = this;
   bg.deck = [];
+  bg.totalBankerWin=0;
+  bg.totalPlayerWin=0;
+  bg.totalTieWin=0;
   bg.cardCollector = [];
   bg.games = [];
   var Banker3rdCardRule = [
@@ -111,47 +114,67 @@ bg.setupNewDeck=function(setupDeckCbf){
   bg.deck = setupDeck(8, setupDeckCbf);
     bg.deck = shuffleDeck(bg.deck);
 }
+bg.anounceWinner=function(game,callbackFunction){
+  if(game.bnkrTtlVl > game.plyrTtlVl){
+     game.win="Banker";
+     bg.totalBankerWin++;
+   }   else if( game.bnkrTtlVl == game.plyrTtlVl){
+     bg.totalTieWin++;
+     game.win="Tie";
+   }   else{
+     bg.totalPlayerWin++;
+      game.win="Player";
+   }
+    if (checkCallBackFunction(callbackFunction)) {
+      if (callbackFunction.anounceWinner) {
+        callbackFunction.anounceWinner(game);
+       
+      }
+        
+    }
+    bg.games.push(game);
+}
  bg.playAGame =function (callbackFunction) {
     if (checkCallBackFunction(callbackFunction)) {
-      if (callbackFunction.playAGame()) {
-        return;
+      if (callbackFunction.playAGame) {
+        callbackFunction.playAGame();
       }
     }
     var game = pullInitialCards(bg.deck);
     if (checkCallBackFunction(callbackFunction)) {
-      if (callbackFunction.pullInitialCards(game)) {
-        return;
+      if (callbackFunction.pullInitialCards) {
+        callbackFunction.pullInitialCards(game);
       }
     }
     if (bg.isNaturalOrTie(game)) {
       bg.games.push(game);
       if (checkCallBackFunction(callbackFunction)) {
-        callbackFunction.naturalOrTie(game);
+        if(callbackFunction.naturalOrTie)
+        callbackFunction.naturalOrTie(game); 
       }
+      bg.anounceWinner(game,callbackFunction);
       return;
     }
     if (willPlayerGet3rdCard(game.player)) {
       push3rdCardToPlayer(game, bg.deck);
       if (checkCallBackFunction(callbackFunction)) {
-        if (callbackFunction.playerGets3rdCard(game)) {
-          return;
+        if (callbackFunction.playerGets3rdCard) {
+            callbackFunction.playerGets3rdCard(game);
         }
       }
     }
     if (willBankerGetCard(game)) {
       pushThe3rdCardToBanker(game, bg.deck);
       if (checkCallBackFunction(callbackFunction)) {
-        if (callbackFunction.bankerGets3rdCard(game)) {
-          return;
+        if (callbackFunction.bankerGets3rdCard) {
+         callbackFunction.bankerGets3rdCard(game);
         }
       }
     }
-    bg.games.push(game);
-    if (checkCallBackFunction(callbackFunction)) {
-      if (callbackFunction.anounceWinner(game)) {
+   
+  
+   bg.anounceWinner(game,callbackFunction);
         return;
-      }
-    }
   }
 
   var pullInitialCards = function(deckToPlay) {
