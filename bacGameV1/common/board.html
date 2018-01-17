@@ -1,0 +1,41 @@
+<div class="boardView">
+	<div class="logo">
+		<span class="icon fa-diamond"></span>
+	</div>
+	<div class="view header">
+		<br/>
+		<span class="btn-group">
+			<button class="btn btn-default" ng-click="$ctrl.anlytcs()" contenteditable="false"><a > Run Analytics </a></button>
+			<button data-toggle="dropdown" class="btn btn-default dropdown-toggle" aria-expanded="false"><span>v</span></button>
+		<ul class="dropdown-menu" contenteditable="false">
+			<li><a ng-click="$ctrl.newBoard()"> New Board </a></li>
+			<li>
+		</ul>
+		</span>
+		<span class="btn-group">
+			<button class="btn btn-default" contenteditable="false">View</button>
+			<button data-toggle="dropdown" class="btn btn-default dropdown-toggle" aria-expanded="false"><span>v</span></button>
+		<ul class="dropdown-menu" contenteditable="false">
+			<li> <a ui-sref="dashboardModulasView">Modulas</a></li>
+			<li> <a ui-sref="dashboardTailView">Tail View</a></li>
+			<li> <a ui-sref="dashboardNumberView">Number View</a></li>
+		</ul>
+		</span>
+	<span class="form-control  scoreboard plyr">P:{{$ctrl.totalPlayerWin}}</span>
+		<span class="form-control  scoreboard bnkr"> B:{{$ctrl.totalBankerWin}}</span>
+		<span class="form-control scoreboard te"> T:{{$ctrl.totaltieWin}}</span>
+		<br>
+		</br>
+	<div>Use Ctrl:<input type='checkbox' ng-model="$ctrl.ctrl"/>
+	<a class='form-control ctrl' ng-click="$ctrl.previousGame()">Prev </a>
+	<a class='form-control ctrl' ng-click="$ctrl.nextGame()"> Next </a>
+	<a class='form-control ctrl' ng-click="$ctrl.newGame()"> Next G</a>
+	<a class='form-control ctrl' ng-click="$ctrl.lastGame()"> last</a>
+	</div>
+	</div>
+
+</div>
+
+<ui-view></ui-view>
+
+</div>

@@ -1,0 +1,46 @@
+.jumbotron {
+  vertical-align:middle;
+
+  color: white;
+}
+.page_bottom {
+    position: fixed;
+    bottom: 10px;
+    right: 2px;
+  width:100%;
+}
+.page_ctrl{
+  float:right;
+}
+a.button {
+    text-decoration: none;
+    margin: 2px;
+    padding:2px;
+    
+}
+.red {
+    background: red;
+    color: white;
+}
+.blue {
+    background: blue;
+    color: white;
+}
+.green{
+    background: green;
+    color: white;
+}
+div#home {
+    background-image: url(/bacGame/mobile/img/home/home_bg.jpg);
+    height:100%;
+    width:100%;
+  vertical-align:middle;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: black;
+   }
+}
+div#pageHeader {
+  visibility:hidden;
+}

@@ -11,7 +11,7 @@
     var dashboardModulasView = {
       name: 'dashboardModulasView',
       templateUrl: 'common/vw/modulas.html'
-    }; 
+    };
     $stateProvider.state(dashboardNumberView);
     $stateProvider.state(dashboardTailView);
     $stateProvider.state(dashboardModulasView);
@@ -25,17 +25,20 @@
       .when('/home', {
         templateUrl: 'home.html'
       })
+      .when('/mobile/', {
+        templateUrl: 'mobile/home.html'
+      })
       .when('/plyBcGm', {
         templateUrl: 'app/plyBcGmHm.html'
       })
 
-    .when('/recScr', {
-      templateUrl: 'app/rcdGmHm.html'
-    })
+      .when('/recScr', {
+        templateUrl: 'app/rcdGmHm.html'
+      })
 
-    .when('/anlytcs', {
-      templateUrl: 'app/anlytcsHm.html'
-    })
+      .when('/anlytcs', {
+        templateUrl: 'app/anlytcsHm.html'
+      })
 
     $locationProvider.html5Mode(true);
   });

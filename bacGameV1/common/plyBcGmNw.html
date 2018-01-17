@@ -1,0 +1,97 @@
+<head><style>
+  <!--
+  /* Font Definitions */
+
+  @font-face {}
+
+  @font-face {}
+
+  /* Style Definitions */
+
+  p.MsoNormal,
+  li.MsoNormal,
+  div.MsoNormal {
+    font-size: 11.0pt;
+    .MsoChpDefault {}
+    .MsoPapDefault {}
+    @page WordSection1 {}
+    div.WordSection1 {}
+  }
+    -->
+    
+</style>
+
+</head>
+
+<body lang=EN-US>
+
+  <div class=WordSection1>
+
+    <table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0>
+      <tr>
+
+        <td valign=top colspan="2">
+          <p class=MsoNormal align=center>Player</p>
+        </td>
+        <td colspan="2" valign=top>
+          <p class='MsoNormal' align=center>Banker</p>
+        </td>
+        
+      </tr>
+      <tr>
+        <td valign=top>
+          <p class=MsoNormal>Pair</p>
+        </td>
+        <td rowspan=3 valign=top>
+          <p class=MsoNormal>
+            <span ng-repeat='gm in $ctrl.plyr  track by $index'>
+            <card data="gm"></card>
+            </span>
+          </p>
+        </td>
+        <td rowspan=3 valign=top>
+          <p class=MsoNormal>
+            <span ng-repeat='gm in $ctrl.bnkr  track by $index'>
+            <card data="gm"></card>
+            </span>
+
+          </p>
+        </td>
+        <td valign=top>
+          <p class=MsoNormal>Pair</p>
+        </td>
+      </tr>
+      <tr>
+        <td valign=top>
+          <p class=MsoNormal>Dragan</p>
+        </td>
+        <td valign=top>
+          <p class=MsoNormal>Dragon</p>
+        </td>
+      </tr>
+      <tr>
+        <td valign=top>
+          <p class=MsoNormal>Total </p>
+          {{$ctrl.pTotal[0]}}
+        </td>
+        <td valign=top>
+          <p class=MsoNormal>Total</p>
+          {{$ctrl.bTotal[0]}}
+        </td>
+      </tr>
+      <tr>
+        <td valign=top></td>
+        <td valign=top> <select class="form-control" id="transactiontype" ng-model="betAmt" ng-options=" opt for opt in [25,100,250,500,1000,2000,3000,4000,5000]" /></td>
+        <td valign=top> <select class="form-control" id="transactiontype" ng-model="betSide" ng-options=" opt for opt in ['Player','Banker']" /></td>
+        <td valign=top><button type="button" id="button_play" class="btn form-control" ng-click='$ctrl.nextGame()'>
+      <i class="fa fa-play"></i>
+    </button> 
+        </td>
+
+        </td>
+      </tr>
+    </table>
+
+    <p class=MsoNormal>&nbsp;</p>
+
+  </div>

@@ -1,0 +1,10 @@
+.tail{
+  transform: rotate(90deg);
+}
+.ve {
+    width: 32px!important;
+    height: 500px;
+    display: block;
+    float: left;
+    overflow: hidden;
+}

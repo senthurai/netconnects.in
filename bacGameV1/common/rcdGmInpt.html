@@ -1,0 +1,34 @@
+<table width="100%">
+  <tr>
+    <th colspan='2'>
+      <input type="button" class="top-left-button" value="<" ng-click="$ctrl.previousBac($ctrl.id,$ctrl.data)"/>   
+      
+      <input type="button" value=">" ng-click="$ctrl.nextBac($ctrl.id,$ctrl.data)" /><bactiles  data="$ctrl.curr" ignr-slctn='true'   ></bactiles>
+      </th>
+      
+  </tr> 
+  <tr>
+    <th  class="pInpt" >
+      <input id="p3" name="p3" type="checkbox" value="true" tabindex="2" ng-model="$ctrl.data[$ctrl.id.val].p3"><label  for="p3">3rd</label>  </th>
+    <th class="bInpt"><label  for="b3">crd</label><input id="b3" name="b3" type="checkbox" value="true" tabindex="2" ng-model="$ctrl.data[$ctrl.id.val].b3">
+    </th>
+  </tr>
+  
+  <tr>
+    <th class="pInpt">
+      <label for="pla">P<select id="pla" name="pla"  tabindex="1" ng-options="c for c in [0,1,2,3,4,5,6,7,8,9]" ng-model="$ctrl.data[$ctrl.id.val].plyrTtlVl">
+      </select></label>
+    </th>
+    <th class="bInpt">
+    <label for="ban">  
+      <select id="ban" name="ban" tabindex="1" ng-model="$ctrl.data[$ctrl.id.val].bnkrTtlVl" ng-options="c for c in [0,1,2,3,4,5,6,7,8,9]">
+      </select>B </label>
+    </th> 
+  </tr>
+  <tr>
+    <th  colspan='2'>
+      <input type="button" value="-" class="top-left-button" ng-click="$ctrl.delBac($ctrl.id,$ctrl.data)" /><bactiles  data="$ctrl.curr" ignr-slctn='true'></bactiles>
+      <input type="button" value="+" ng-click="$ctrl.AddBac($ctrl.id,$ctrl.data)" />
+      </th>
+  </tr>
+</table>

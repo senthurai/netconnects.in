@@ -1,0 +1,27 @@
+.board {
+  overflow: visible;
+}
+
+.boardView {
+  height: 80px;
+}
+
+.header {
+  z-index: 1030;
+  position: fixed;
+  width: 81%;
+  height: 100px;
+  background-color: black;
+}
+
+.scoreboard {
+  display: inline;
+  color:white;
+}
+.ctrl {
+  display: inline;
+  box-shadow: inset -2px -5px black;
+}
+.nmbrInpt {
+  width: 30px;
+}

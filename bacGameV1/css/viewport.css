@@ -1,0 +1,17 @@
+@media only screen and (max-width: 500px) {
+  .large {
+    display: none;
+  }
+  .small {
+    display: block;
+  }
+}
+
+@media only screen and (min-width: 500px) {
+  .large {
+    display: block;
+  }
+  .small {
+    display: none;
+  }
+}

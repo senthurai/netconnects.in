@@ -1,0 +1,60 @@
+@font-face {
+  font-family: "Papyrus Regular";
+  src: url("fonts/PAPYRUS.TTF");
+}
+div#bacG {
+    width: 100%;
+    height: 100%;
+}
+div#pageHeader {
+  width: 100%;
+  height: 40px;
+  position: fixed;
+  background-image: url(/bacGame/mobile/img/header_title.jpg);
+  background-position: center;
+}
+
+div#content {}
+
+body {
+  font-family: "Papyrus Regular";
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-top: 0px;
+}
+
+span#siteHeader {
+  float: right;
+  font-size: 1.5em;
+  -webkit-margin-before: 10px;
+  -webkit-margin-after: 10px;
+  -webkit-margin-start: 10px;
+  -webkit-margin-end: 10px;
+  font-weight: bold;
+}
+
+span#pageHeader {
+  float: left;
+  font-size: 1.5em;
+  -webkit-margin-before: 10px;
+  -webkit-margin-after: 10px;
+  -webkit-margin-start: 10px;
+  -webkit-margin-end: 10px;
+  font-weight: bold;
+}
+
+div#mobilefooter {
+  position: fixed;
+  bottom: 0px;
+  height: 50px;
+  width: 100%;
+  background-image: url(/bacGame/mobile/img/siteMenuBarBaseLine.png);
+  background-position: center;
+  background-size: auto 50px;
+}
+
+span#siteMenu {}
+
+img#siteMenu {
+  height: 50px;
+}
