@@ -1,0 +1,16 @@
+<div class="">
+  <form>
+
+    Vertical: <input type="checkbox" ng-click="$ctrl.getModulasData()" ng-checked="$ctrl.verticalBoard" /> Curl: <input type="checkbox" ng-click="$ctrl.getModulasData()" ng-model="$ctrl.curl" />
+    <rzslider rz-slider-model="$ctrl.burnCard.cardNum"></rzslider>
+
+    <div class="board" style="width:{{45*31}}px">
+      <span ng-repeat='gm in $ctrl.data track by $index'>
+        
+        <bactiles data="gm" ></bactiles>
+    <br ng-if="$ctrl.isEqualWin(gm.win,gm.totalBankerWin,gm.totalPlayerWin)"/>
+          <br ng-if="$ctrl.isEqualWin(gm.win,gm.totalBankerWin,gm.totalPlayerWin)"/>
+  </span>
+    </div>
+  </form>
+  <div>

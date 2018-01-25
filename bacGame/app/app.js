@@ -14,7 +14,7 @@
        deps: ['angular']
      },
      "app/routes": {
-       deps: ['angular', 'angular-ui-router', 'ngRoute']
+       deps: ['angular', 'angular-ui-router', 'ngRoute','app/baccG']
      }, 
      angularUiBootstrap:{
        deps:['angular']

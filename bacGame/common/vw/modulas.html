@@ -1,14 +1,17 @@
 <div class="">
   <form>
 
-    Vertical: <input type="checkbox" ng-click="$ctrl.getModulasData()" ng-checked="$ctrl.verticalBoard" /> Curl: <input type="checkbox" ng-click="$ctrl.getModulasData()" ng-model="$ctrl.curl" />
-    <rzslider rz-slider-model="$ctrl.burnCard.cardNum"></rzslider>
-
+    Skip Tie: <input type="checkbox" ng-click="$ctrl.getModulasData()" ng-model="$ctrl.skipTie" /> Curl: <input type="checkbox" ng-click="$ctrl.getModulasData()" ng-model="$ctrl.curl" />
+    <span><input class="" type="text" ng-model="$ctrl.modulasNumber"/><button class="btn"  ng-click="$ctrl.getModulasData()">
+      mod
+      </button>
+  
     <div class="board" style="width:{{$ctrl.getBoardWidth($ctrl.burnCard.cardNum)*31}}px">
       <span ng-repeat='gm in $ctrl.modulasData track by $index'>
         <br ng-if="($index % $ctrl.getBoardWidth($ctrl.burnCard.cardNum))==0"/>
+       
         <bactiles data="gm" ></bactiles>
-    
+      
   </span>
     </div>
   </form>

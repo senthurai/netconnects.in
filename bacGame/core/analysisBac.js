@@ -39,7 +39,9 @@ var analysis = function(burnCard) {
   mod.pushBinToArr = function(win, index) {
     result = win == "banker" ? "1" : win == "tie" ? "." : "0";
     mod.samples[index / mod.burnCard | 0][index % mod.burnCard] = result;
-    mod.forecast[index % mod.burnCard] = mod.forecast[index % mod.burnCard] + result;
+    var append = mod.forecast[index % mod.burnCard] + result;
+    append = append.substring(append.length - 3);
+    mod.forecast[index % mod.burnCard] = append;
     return result;
   }
 

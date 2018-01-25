@@ -6,6 +6,9 @@ var bacPlay = function(isInp) {
   bPlay.plyrTtlVl = 0;
   bPlay.p3 = false;
   bPlay.b3 = false;
+  bPlay.totalBankerWin = 0;
+  bPlay.totalPlayerWin = 0;
+  bPlay.totalTieWin = 0;
   bPlay.guess = 0;
   var cal = function() {
     bPlay.plyrTtl();
@@ -119,17 +122,23 @@ var bacGm = function() {
     if (game.bnkrTtlVl > game.plyrTtlVl) {
       game.win = "Banker";
       bg.totalBankerWin++;
+     
+      
     } else if (game.bnkrTtlVl == game.plyrTtlVl) {
       bg.totalTieWin++;
+      
       game.win = "Tie";
     } else {
       bg.totalPlayerWin++;
+      
       game.win = "Player";
     }
+     game.totalBankerWin=bg.totalBankerWin;
+     game.totalTieWin=bg.totalTieWin;
+     game.totalPlayerWin=bg.totalPlayerWin;
     if (checkCallBackFunction(callbackFunction)) {
       if (callbackFunction.anounceWinner) {
         callbackFunction.anounceWinner(game);
-
       }
 
     }
@@ -172,8 +181,6 @@ var bacGm = function() {
         }
       }
     }
-
-
     bg.anounceWinner(game, callbackFunction);
     return;
   }
