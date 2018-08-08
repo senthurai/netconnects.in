@@ -9,9 +9,9 @@
     <div class="board" style="width:{{$ctrl.getBoardWidth($ctrl.burnCard.cardNum)*31}}px">
       <span ng-repeat='gm in $ctrl.modulasData track by $index'>
         <br ng-if="($index % $ctrl.getBoardWidth($ctrl.burnCard.cardNum))==0"/>
-       
-        <bactiles data="gm" ></bactiles>
-      
+       <span>
+        <bactiles data="gm" ng-click="$ctrl.setCurrentGm(gm)" ></bactiles>
+      </span>
   </span>
     </div>
   </form>

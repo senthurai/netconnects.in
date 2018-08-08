@@ -59,10 +59,7 @@ var boardController = function($boardService, $state, $scope) {
     boardCtrl.burnCard = card;
   };
   boardCtrl.getModPostionFor = function(index, modNumber, arrayLength) {
-    boardCtrl.noOfColumn = (arrayLength / modNumber) | 0;
-    if (arrayLength % modNumber > 0) {
-      boardCtrl.noOfColumn = boardCtrl.noOfColumn + 1;
-    }
+   
     var row = (index % modNumber);
     var column = (index / modNumber) | 0;
     if (column % 2 == 1 && boardCtrl.curl) {
@@ -80,11 +77,28 @@ var boardController = function($boardService, $state, $scope) {
     } else {
       modData.length = boardCtrl.data.length;
     }
+     boardCtrl.noOfColumn = (modData.length / boardCtrl.modulasNumber) | 0;
+    if (modData.length % boardCtrl.modulasNumber > 0) {
+      boardCtrl.noOfColumn = boardCtrl.noOfColumn + 1;
+    }
+    var tie=0;
     boardCtrl.data.forEach(function(dat, i) {
+     
+      if(dat.win == 'Tie'){
+          tie++;
+        }
+      //skipTie|TIE|output
+      //  1       0   - 1  
+      //  1       1   - 0
+      //  0       0   - 1
+      //  0       1   - 1
       if (!(boardCtrl.skipTie && dat.win == 'Tie')) {
-        j = boardCtrl.getModPostionFor(i - dat.totalTieWin, boardCtrl.modulasNumber, modData.length);
+        j = boardCtrl.getModPostionFor(i - (boardCtrl.skipTie?tie:0), boardCtrl.modulasNumber, modData.length);
         boardCtrl.modulasData[j] = dat;
+        boardCtrl.setCurrentGm(dat);
       }
+
+      
     });
     return boardCtrl.modulasData;
   };
@@ -119,6 +133,9 @@ var boardController = function($boardService, $state, $scope) {
     console.log("--" + playWin + "P B" + bankWin + "is Equal");
     return win != 'Tie' ? bankWin == playWin : false;
   }
+  boardCtrl.setCurrentGm=function(gm){
+    boardCtrl.currentGm=gm;
+    };
   boardCtrl.anlytcs = function() {
     delete boardCtrl.numMap;
     delete boardCtrl.data;
@@ -144,6 +161,8 @@ var boardController = function($boardService, $state, $scope) {
       boardCtrl.bacGmtry.playAGame(new boardCtrl.playGame());
       boardCtrl.data = boardCtrl.bacGmtry.games;
       boardCtrl.modulasData = boardCtrl.getModulasData();
+      
+
     }
     console.log("new");
   }

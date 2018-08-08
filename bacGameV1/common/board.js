@@ -23,7 +23,7 @@ var boardController = function($boardService, $state, $scope) {
   boardCtrl.numMap = [];
   boardCtrl.curl = false;
   boardCtrl.ctrl = true;
-  boardCtrl.totaltieWin = 0;
+  boardCtrl.totalTieWin = 0;
   boardCtrl.totalPlayerWin = 0;
   boardCtrl.totalBankerWin = 0;
   boardCtrl.verticalBoard = false;
@@ -99,7 +99,7 @@ var boardController = function($boardService, $state, $scope) {
       if (game.win == 'Player')
         boardCtrl.totalPlayerWin++;
       if (game.win == 'Tie')
-        boardCtrl.totaltieWin++;
+        boardCtrl.totalTieWin++;
       
     }
    
@@ -109,7 +109,7 @@ var boardController = function($boardService, $state, $scope) {
     delete boardCtrl.data;
     delete boardCtrl.modulasData;
     boardCtrl.bacGmtry = new bacGm();
-    boardCtrl.totaltieWin = 0;
+    boardCtrl.totalTieWin = 0;
     boardCtrl.totalPlayerWin = 0;
     boardCtrl.totalBankerWin = 0;
    // bacGmtry.playBac(null, boardCtrl.burnCardFn, new boardCtrl.playGame());

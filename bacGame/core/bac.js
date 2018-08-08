@@ -62,17 +62,19 @@ var bacGm = function() {
   bg.totalTieWin = 0;
   bg.cardCollector = [];
   bg.games = [];
+ 
   var Banker3rdCardRule = [
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0],
-    [1, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0],
-    [1, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0],
-    [1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1],
-    [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
-    [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
-    [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+ //Player  0, 1, 2, 3, 4, 5, 6 ,7, 8, 9
+ /*B9*/   [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+ /*B8*/   [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+ /*B7*/   [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+ /*B6*/   [0, 0, 0, 0, 0, 0, 1, 1, 0, 0],
+ /*B5*/   [0, 0, 0, 0, 1, 1, 1, 1, 0, 0],
+ /*B4*/   [0, 0, 1, 1, 1, 1, 1, 1, 0, 0],
+ /*B3*/   [1, 1, 1, 1, 1, 1, 1, 1, 0, 1],
+ /*B2*/   [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+ /*B1*/   [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+ /*B0*/   [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
   ];
 
   bg.getCardValue = function(card) {
@@ -113,7 +115,7 @@ var bacGm = function() {
       bg.playAGame(playAGameCbf);
     }
   }
-  
+
   bg.setupNewDeck = function(setupDeckCbf) {
     bg.deck = setupDeck(8, setupDeckCbf);
     bg.deck = shuffleDeck(bg.deck);
@@ -122,20 +124,20 @@ var bacGm = function() {
     if (game.bnkrTtlVl > game.plyrTtlVl) {
       game.win = "Banker";
       bg.totalBankerWin++;
-     
-      
+
+
     } else if (game.bnkrTtlVl == game.plyrTtlVl) {
       bg.totalTieWin++;
-      
+
       game.win = "Tie";
     } else {
       bg.totalPlayerWin++;
-      
+
       game.win = "Player";
     }
-     game.totalBankerWin=bg.totalBankerWin;
-     game.totalTieWin=bg.totalTieWin;
-     game.totalPlayerWin=bg.totalPlayerWin;
+    game.totalBankerWin = bg.totalBankerWin;
+    game.totalTieWin = bg.totalTieWin;
+    game.totalPlayerWin = bg.totalPlayerWin;
     if (checkCallBackFunction(callbackFunction)) {
       if (callbackFunction.anounceWinner) {
         callbackFunction.anounceWinner(game);
@@ -157,7 +159,7 @@ var bacGm = function() {
       }
     }
     if (bg.isNaturalOrTie(game)) {
-     
+
       if (checkCallBackFunction(callbackFunction)) {
         if (callbackFunction.naturalOrTie)
           callbackFunction.naturalOrTie(game);
@@ -211,10 +213,10 @@ var bacGm = function() {
   }
 
   var willBankerGetCard = function(game) {
-    if (game.player.length == 2) {
+    if (game.player.getArray().length == 2) {
       return true;
     }
-    return Banker3rdCardRule[9 - bg.calculateTotal(game.banker)][9 - bg.calculateTotal(game.banker)] == 1;
+    return Banker3rdCardRule[9 - bg.calculateTotal(game.banker)][game.player.getArray()[2].cardNum%10] == 1;
   }
 
   var pushThe3rdCardToBanker = function(game, deckToPlay) {
@@ -224,7 +226,7 @@ var bacGm = function() {
 
   this.isNaturalOrTie = function(game) {
     // if either player or banker gets  8 more return true else false. or if 6 or greater with same value Tie(66,77,88,99).
-    return (game.plyrTtlVl >= 8) || (game.bnkrTtlVl >= 8) || (game.plyrTtlVl > 5 && game.plyrTtlVl == game.bnkrTtlVl);
+    return (game.plyrTtlVl >= 8) || (game.bnkrTtlVl >= 8) || (game.plyrTtlVl > 5 && game.bnkrTtlVl > 5);
   }
 
 

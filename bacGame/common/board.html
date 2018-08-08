@@ -24,9 +24,11 @@
 		</span>
 	<span class="btn  scoreboard plyr">P:{{$ctrl.totalPlayerWin}}</span>
 		<span class=" btn  scoreboard bnkr"> B:{{$ctrl.totalBankerWin}}</span>
-		<span class=" btn scoreboard te"> T:{{$ctrl.totaltieWin}}</span>
+		<span class=" btn scoreboard te"> T:{{$ctrl.totalTieWin}}</span>
+    <span class=" btn scoreboard tot"> Total Games:{{$ctrl.totalPlayerWin+$ctrl.totalBankerWin+$ctrl.totalTieWin}}</span>
 		<br>
-		</br>
+  <span>Game:  P:{{$ctrl.currentGm.plyrTtlVl}} B:{{$ctrl.currentGm.bnkrTtlVl}} P[{{$ctrl.currentGm.player}}] B[{{$ctrl.currentGm.banker}}]
+		</span></br>
 	<div>Use Ctrl:<input type='checkbox' ng-model="$ctrl.ctrl"/>
 	<a class='btn ctrl' ng-click="$ctrl.previousGame()">Prev </a>
 	<a class=' btn ctrl' ng-click="$ctrl.nextGame()"> Next </a>
