@@ -3,7 +3,7 @@
     <th colspan='2'>
       <input type="button" class="top-left-button" value="<" ng-click="$ctrl.previousBac($ctrl.id,$ctrl.data)"/>   
       
-      <input type="button" value=">" ng-click="$ctrl.nextBac($ctrl.id,$ctrl.data)" /><bactiles  data="$ctrl.curr" ignr-slctn='true'   ></bactiles>
+      <input type="button" value=">" ng-click="$ctrl.nextBac($ctrl.id,$ctrl.data)" /><bactiles index="$ctrl.id" data="$ctrl.curr" ignr-slctn='true'   ></bactiles>
       </th>
       
   </tr> 
@@ -27,7 +27,7 @@
   </tr>
   <tr>
     <th  colspan='2'>
-      <input type="button" value="-" class="top-left-button" ng-click="$ctrl.delBac($ctrl.id,$ctrl.data)" /><bactiles  data="$ctrl.curr" ignr-slctn='true'></bactiles>
+      <input type="button" value="-" class="top-left-button" ng-click="$ctrl.delBac($ctrl.id,$ctrl.data)" /><bactiles index="$ctrl.id" data="$ctrl.curr" ignr-slctn='true'></bactiles>
       <input type="button" value="+" ng-click="$ctrl.AddBac($ctrl.id,$ctrl.data)" />
       </th>
   </tr>

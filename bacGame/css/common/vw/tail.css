@@ -1,12 +1,24 @@
-.tail {
-  transform: scale(1, -1) rotate(270deg);
-  transform-origin: 0 0;
+.board {
+    width: 100%;
+    overflow-x: auto;
+}
+.tailBoard {
+    width: 8000px;
+    overflow-x: auto;
 }
 
+.break{
+  height:33x;
+}
+.columns{
+  height:70%;
+  width:33px;
+      display: inline-block;
+}
 .ve {
   width: 32px!important;
   height: 500px;
   display: block;
-  float: left;
+  float: right;
   overflow: hidden;
 }

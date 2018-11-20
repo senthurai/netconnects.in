@@ -1,8 +1,10 @@
- <div class="board tail" >
-    <span ng-repeat='gm in $ctrl.data  track by $index'>
-      <span ng-if="$ctrl.isBreak(gm,$index)"><div class="break">
-        <br/><br>
-        </div></span>
+ <div class="board" >
+   <div class="tailBoard" style="width:{{$ctrl.tailTable.length*33}}" >
+    <span class="columns" ng-repeat='gmColumn in $ctrl.tailTable  track by $index'>
+       <span class="rows" ng-repeat='gm in gmColumn'>
     <bactiles data="gm"></bactiles>
+      </span>
     </span> 
+     <div>
   </div>
+ 

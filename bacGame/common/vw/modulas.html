@@ -6,13 +6,15 @@
       mod
       </button>
   
-    <div class="board" style="width:{{$ctrl.getBoardWidth($ctrl.burnCard.cardNum)*31}}px">
+    <div class="board">
+         <div style="width:{{$ctrl.getBoardWidth($ctrl.burnCard.cardNum)*31}}px">
       <span ng-repeat='gm in $ctrl.modulasData track by $index'>
         <br ng-if="($index % $ctrl.getBoardWidth($ctrl.burnCard.cardNum))==0"/>
        <span>
-        <bactiles data="gm" ng-click="$ctrl.setCurrentGm(gm)" ></bactiles>
+        <bactiles index="$index"  data="gm" ></bactiles>
       </span>
   </span>
+    </div>
     </div>
   </form>
   <div>

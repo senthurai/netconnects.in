@@ -1,7 +1,0 @@
-
-        
-<IfModule mod_rewrite.c>
-RewriteBase /
-RewriteCond %{HTTP_HOST} .* [NC]
-RewriteRule (.*) /bacGame
-</ifModule>

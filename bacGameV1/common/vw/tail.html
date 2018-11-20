@@ -1,6 +1,6 @@
  <div class="board tail" >
     <span ng-repeat='gm in $ctrl.data  track by $index'>
       <span ng-if="$ctrl.isBreak(gm,$index)"><br/><br/></span>
-    <bactiles data="gm"></bactiles>
+    <bactiles index="$index" data="gm"></bactiles>
     </span> 
   </div>

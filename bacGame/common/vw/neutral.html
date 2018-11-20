@@ -7,7 +7,7 @@
     <div class="board" style="width:{{45*31}}px">
       <span ng-repeat='gm in $ctrl.data track by $index'>
         
-        <bactiles data="gm" ></bactiles>
+        <bactiles index="$index"  data="gm" ></bactiles>
     <br ng-if="$ctrl.isEqualWin(gm.win,gm.totalBankerWin,gm.totalPlayerWin)"/>
           <br ng-if="$ctrl.isEqualWin(gm.win,gm.totalBankerWin,gm.totalPlayerWin)"/>
   </span>

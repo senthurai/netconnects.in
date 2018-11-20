@@ -4,13 +4,16 @@
      controller: tilesController,
      bindings: {
        data: '<',
+       index:'<',
        ignrSlctn: '<'
      }
    });
 
-   function tilesController() {
+   function tilesController($boardService) {
      ctrl = this;
-
+  ctrl.setCurrentGm=function(index){
+    $boardService.setSelectedGam(index);
+    };
      isNtrl = function(p13, p23, p1, p2) {
        return ((!p13 && !p23) && (p1 > p2) && p1 > 7 && p1 != p2);
      };

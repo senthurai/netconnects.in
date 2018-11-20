@@ -1,4 +1,4 @@
-<span  class='gam {{$ctrl.data.winner($ctrl.data)}} {{$ctrl.data.isCurrent && ((!($ctrl.ignrSlctn)) || $ctrl.ignrSlctn!=true)?"curr":""}}' title="P:{{$ctrl.data.plyrTtlVl}} B:{{$ctrl.data.bnkrTtlVl}} P[{{$ctrl.data.player}}] B[{{$ctrl.data.banker}}]">
+<span  ng-click="$ctrl.setCurrentGm($ctrl.data.index)" class='gam {{$ctrl.data.winner($ctrl.data)}} {{$ctrl.data.isCurrent && ((!($ctrl.ignrSlctn)) || $ctrl.ignrSlctn!=true)?"curr":""}}' title="P:{{$ctrl.data.plyrTtlVl}} B:{{$ctrl.data.bnkrTtlVl}} P[{{$ctrl.data.player}}] B[{{$ctrl.data.banker}}]">
   <span class=' {{$ctrl.getDragon($ctrl.data)}} '>
     <span class="t-overlay"> {{$ctrl.data.win=='Player'?'1':$ctrl.data.win=='Tie'?'0':'-1'}}</span>
     

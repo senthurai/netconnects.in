@@ -23,12 +23,20 @@ var boardController = function($boardService, $state, $scope) {
       $state.go(value);
     }
   });
-  boardCtrl.$boardService = $boardService;
+  $scope.boardService = $boardService;
+  boardCtrl.boardService = $boardService;
+  $scope.$watch('boardService.storage.selectedGamIndex', function(value) {
+    if (value) {
+      boardCtrl.currentGm = boardCtrl.boardService.getSeletedGam();
+    }
+  });
   boardCtrl.numMap = [];
+  boardCtrl.tailTable = [];
   boardCtrl.curl = false;
   boardCtrl.ctrl = true;
   boardCtrl.totalTieWin = 0;
   boardCtrl.totalPlayerWin = 0;
+
   boardCtrl.totalBankerWin = 0;
   boardCtrl.skipTie = true;
   boardCtrl.modulasNumber = 0;
@@ -54,12 +62,13 @@ var boardController = function($boardService, $state, $scope) {
     delete boardCtrl.data;
     boardCtrl.data = [];
     boardCtrl.modulasData = [];
+    boardCtrl.boardService.currentBoard = [];
   };
   boardCtrl.burnCardFn = function(card) {
     boardCtrl.burnCard = card;
   };
   boardCtrl.getModPostionFor = function(index, modNumber, arrayLength) {
-   
+
     var row = (index % modNumber);
     var column = (index / modNumber) | 0;
     if (column % 2 == 1 && boardCtrl.curl) {
@@ -77,32 +86,38 @@ var boardController = function($boardService, $state, $scope) {
     } else {
       modData.length = boardCtrl.data.length;
     }
-     boardCtrl.noOfColumn = (modData.length / boardCtrl.modulasNumber) | 0;
+    boardCtrl.noOfColumn = (modData.length / boardCtrl.modulasNumber) | 0;
     if (modData.length % boardCtrl.modulasNumber > 0) {
       boardCtrl.noOfColumn = boardCtrl.noOfColumn + 1;
     }
-    var tie=0;
+    var tie = 0;
     boardCtrl.data.forEach(function(dat, i) {
-     
-      if(dat.win == 'Tie'){
-          tie++;
-        }
+
+      if (dat.win == 'Tie') {
+        tie++;
+      }
       //skipTie|TIE|output
       //  1       0   - 1  
       //  1       1   - 0
       //  0       0   - 1
       //  0       1   - 1
       if (!(boardCtrl.skipTie && dat.win == 'Tie')) {
-        j = boardCtrl.getModPostionFor(i - (boardCtrl.skipTie?tie:0), boardCtrl.modulasNumber, modData.length);
+        j = boardCtrl.getModPostionFor(i - (boardCtrl.skipTie ? tie : 0), boardCtrl.modulasNumber, modData.length);
         boardCtrl.modulasData[j] = dat;
-        boardCtrl.setCurrentGm(dat);
+        boardCtrl.boardService.setCurrentGam(i);
       }
 
-      
+
     });
     return boardCtrl.modulasData;
   };
-  boardCtrl.findLastWin = function(i) {
+
+
+  boardCtrl.getSelectedGam = function() {
+    return boardCtrl.boardService.getSeletedGam();
+  }
+
+  boardCtrl.findLastWin = function(i, curr) {
     if (i > 0) {
       if (boardCtrl.data[--i].win != 'Tie') {
         return boardCtrl.data[i].win;
@@ -110,11 +125,11 @@ var boardController = function($boardService, $state, $scope) {
         return boardCtrl.findLastWin(i);
       }
     } else {
-      return boardCtrl.data[0].win;
+      return boardCtrl.data[0].win == 'Tie' ? curr : boardCtrl.data[0].win;
     }
   };
   boardCtrl.isBreak = function(gm, index) {
-    return (boardCtrl.data[index].win == "Tie" ? false : gm.win != boardCtrl.findLastWin(index));
+    return (boardCtrl.data[index].win == "Tie" ? false : gm.win != boardCtrl.findLastWin(index, boardCtrl.data[index].win));
   }
   boardCtrl.playGame = function() {
     board = this;
@@ -130,12 +145,25 @@ var boardController = function($boardService, $state, $scope) {
 
   };
   boardCtrl.isEqualWin = function(win, bankWin, playWin) {
-    console.log("--" + playWin + "P B" + bankWin + "is Equal");
+
     return win != 'Tie' ? bankWin == playWin : false;
   }
-  boardCtrl.setCurrentGm=function(gm){
-    boardCtrl.currentGm=gm;
-    };
+  boardCtrl.getTailData = function() {
+    tailCtrl = this;
+    tailCtrl.columnData = [];
+    boardCtrl.tailTable = [];
+    boardCtrl.tailTable.push(tailCtrl.columnData);
+
+    boardCtrl.data.forEach(function(gm, index) {
+      if (boardCtrl.isBreak(gm, index)) {
+        tailCtrl.columnData = [];
+        boardCtrl.tailTable.push(tailCtrl.columnData);
+      }
+      tailCtrl.columnData.push(gm);
+    });
+    return boardCtrl.tailTable;
+  };
+
   boardCtrl.anlytcs = function() {
     delete boardCtrl.numMap;
     delete boardCtrl.data;
@@ -152,16 +180,20 @@ var boardController = function($boardService, $state, $scope) {
       boardCtrl.bacGmtry.playAGame(new boardCtrl.playGame());
     }
     boardCtrl.modulasNumber = boardCtrl.getBoardheight(boardCtrl.burnCard.cardNum);
+
     boardCtrl.data = boardCtrl.bacGmtry.games;
+    boardCtrl.boardService.setCurrentBoard(boardCtrl.data);
     boardCtrl.modulasData = [];
     boardCtrl.modulasData = boardCtrl.getModulasData();
+    boardCtrl.tailTable = boardCtrl.getTailData();
   };
   boardCtrl.newGame = function() {
     if (boardCtrl.ctrl && boardCtrl.bacGmtry.deck.length > 52) {
       boardCtrl.bacGmtry.playAGame(new boardCtrl.playGame());
       boardCtrl.data = boardCtrl.bacGmtry.games;
+      boardCtrl.boardService.setCurrentBoard(boardCtrl.data);
       boardCtrl.modulasData = boardCtrl.getModulasData();
-      
+      boardCtrl.tailTable = boardCtrl.getTailData();
 
     }
     console.log("new");
